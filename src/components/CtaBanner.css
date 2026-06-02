@@ -1,0 +1,120 @@
+/* ═══════════════════════════════════════════════════════════════
+   CTA Banner — deep purple card on parchment background
+═══════════════════════════════════════════════════════════════ */
+.cta-banner-wrap {
+  background: #ece8e1;
+  padding: 0 48px 72px;
+}
+
+.cta-banner {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: #4a1a6b;
+  border-radius: 20px;
+  padding: 64px 48px 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle radial highlight in the background */
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(140, 60, 200, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Pulsing green dot ────────────────────────────────────────── */
+.cta-banner__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #6ecb7a;
+  display: block;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.cta-banner__dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(110, 203, 122, 0.35);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%       { transform: scale(1.6); opacity: 0; }
+}
+
+/* ── Heading ──────────────────────────────────────────────────── */
+.cta-banner__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* ── Body ─────────────────────────────────────────────────────── */
+.cta-banner__body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 560px;
+  margin: 0;
+}
+
+/* ── CTA Button ───────────────────────────────────────────────── */
+.cta-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 14px 36px;
+  border-radius: 100px;
+  background: #fff;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.cta-banner__btn:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Responsive
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .cta-banner-wrap {
+    padding: 0 20px 56px;
+  }
+
+  .cta-banner {
+    padding: 48px 24px 56px;
+    border-radius: 16px;
+  }
+}

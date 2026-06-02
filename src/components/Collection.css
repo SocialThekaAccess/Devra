@@ -1,0 +1,241 @@
+/* ═══════════════════════════════════════════════════════════════
+   Collection Section  —  light parchment background
+═══════════════════════════════════════════════════════════════ */
+.collection-section {
+  background: #ece8e1;
+  padding: 72px 48px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Section heading ──────────────────────────────────────────── */
+.collection-section__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 400;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: -0.01em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   3 × 2 Collection Grid
+═══════════════════════════════════════════════════════════════ */
+.col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 1080px;
+  margin-bottom: 64px;
+}
+
+/* ── Individual card ──────────────────────────────────────────── */
+.col-card {
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.col-card__img-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.col-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.col-card:hover .col-card__img {
+  transform: scale(1.05);
+}
+
+/* gradient overlay so label is always legible */
+.col-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  border-radius: 14px;
+}
+
+.col-card__label {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Core Services Text Block
+═══════════════════════════════════════════════════════════════ */
+.services-block {
+  max-width: 780px;
+  text-align: center;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* purple pill */
+.services-block__pill {
+  display: inline-block;
+  background: #6b2fa0;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: 7px 20px;
+  border-radius: 100px;
+}
+
+.services-block__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 400;
+  color: #1a1a1a;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.services-block__body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   2 × 2 Service Cards Grid
+═══════════════════════════════════════════════════════════════ */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 1080px;
+}
+
+/* ── Individual service card ──────────────────────────────────── */
+.svc-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 160px;
+}
+
+.svc-card__img-wrap {
+  flex: 0 0 42%;
+  overflow: hidden;
+  border-radius: 16px 0 0 16px;
+}
+
+.svc-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.svc-card:hover .svc-card__img {
+  transform: scale(1.05);
+}
+
+.svc-card__body {
+  flex: 1;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.svc-card__title {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* last card has a serif title (as in design) */
+.svc-card:last-child .svc-card__title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.svc-card__desc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #5a5a5a;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Responsive
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .collection-section {
+    padding: 56px 24px 64px;
+  }
+
+  .col-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .svc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .col-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-card {
+    flex-direction: column;
+  }
+
+  .svc-card__img-wrap {
+    flex: none;
+    height: 200px;
+    border-radius: 16px 16px 0 0;
+  }
+}
