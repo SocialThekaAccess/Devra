@@ -3,7 +3,7 @@ import { Link } from '../router'
 import Navbar from './Navbar'
 import './HeroSlider.css'
 
-const slides = [
+const defaultSlides = [
   {
     id: 1,
     src: '/slides/slide1.avif',
@@ -25,7 +25,7 @@ const INTERVAL = 5000
 // How much the image moves relative to scroll — 0.4 = 40% speed (gentle)
 const PARALLAX_SPEED = 0.4
 
-export default function HeroSlider({ hideContent = false }) {
+export default function HeroSlider({ hideContent = false, slides = defaultSlides }) {
   const [current, setCurrent] = useState(0)
   const [imageErrors, setImageErrors] = useState({})
   const slidesRef = useRef(null)
