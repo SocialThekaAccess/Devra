@@ -1,4 +1,5 @@
 import './Collection.css'
+import { Link } from '../router'
 
 import residentialImg from '../assets/residential.avif'
 import housingsImg from '../assets/housing.avif'
@@ -8,42 +9,12 @@ import hospitalityImg from '../assets/hospitality.avif'
 import farmhouseImg from '../assets/farmHouse.avif'
 
 const collectionItems = [
-  {
-    id: 1,
-    label: 'RESIDENTIAL',
-    src: residentialImg,
-    fallback: '#c8b89a',
-  },
-  {
-    id: 2,
-    label: 'HOUSINGS',
-    src: housingsImg,
-    fallback: '#9aab9a',
-  },
-  {
-    id: 3,
-    label: 'COMMERCIAL',
-    src: commercialImg,
-    fallback: '#d4cfc8',
-  },
-  {
-    id: 4,
-    label: 'SCHOOLS',
-    src: schoolsImg,
-    fallback: '#b8c4c8',
-  },
-  {
-    id: 5,
-    label: 'HOSPITALITY',
-    src: hospitalityImg,
-    fallback: '#8a7a6a',
-  },
-  {
-    id: 6,
-    label: 'FARM HOUSE',
-    src: farmhouseImg,
-    fallback: '#a89878',
-  },
+  { id: 1, label: 'RESIDENTIAL', src: residentialImg, fallback: '#c8b89a', to: '/residential' },
+  { id: 2, label: 'HOUSINGS',    src: housingsImg,    fallback: '#9aab9a', to: '/housing' },
+  { id: 3, label: 'COMMERCIAL',  src: commercialImg,  fallback: '#d4cfc8', to: '/commercial' },
+  { id: 4, label: 'SCHOOLS',     src: schoolsImg,     fallback: '#b8c4c8', to: '/schools' },
+  { id: 5, label: 'HOSPITALITY', src: hospitalityImg, fallback: '#8a7a6a', to: '/hospitality' },
+  { id: 6, label: 'FARM HOUSE',  src: farmhouseImg,   fallback: '#a89878', to: '/farm-houses' },
 ]
 
 const serviceCards = [
@@ -79,20 +50,16 @@ const serviceCards = [
 
 function CollectionCard({ item }) {
   return (
-    <div className="col-card">
+    <Link to={item.to} className="col-card">
       <div
         className="col-card__img-wrap"
         style={{ background: item.fallback }}
       >
-        <img
-          src={item.src}
-          alt={item.label}
-          className="col-card__img"
-        />
+        <img src={item.src} alt={item.label} className="col-card__img" />
         <div className="col-card__overlay" />
         <span className="col-card__label">{item.label}</span>
       </div>
-    </div>
+    </Link>
   )
 }
 

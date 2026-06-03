@@ -14,6 +14,13 @@
   --color-overlay: rgba(0, 0, 0, 0.35);
   --transition-slow: 1.2s ease;
   --transition-med: 0.4s ease;
+
+  /* ── Type scale ── */
+  --fs-h1: 82px;
+  --fs-h2: 64px;
+  --fs-h3: 60px;
+  --fs-h4: 38px;
+  --fs-p:  22px;
 }
 
 html, body {

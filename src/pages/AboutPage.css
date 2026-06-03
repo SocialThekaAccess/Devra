@@ -78,7 +78,7 @@
 
 .about-values__heading {
   font-family: var(--font-serif);
-  font-size: clamp(36px, 4vw, 56px);
+  font-size: var(--fs-h2);
   font-weight: 400;
   color: #1a1a1a;
   line-height: 1.1;
@@ -88,7 +88,7 @@
 
 .about-values__body {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--fs-p);
   font-weight: 300;
   line-height: 1.85;
   color: #5a5a5a;
@@ -179,7 +179,7 @@
 
 .about-team__heading {
   font-family: var(--font-serif);
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: var(--fs-h2);
   font-weight: 400;
   color: #1a1a1a;
   margin: 0;
@@ -226,7 +226,7 @@
 
 .about-team__card-name {
   font-family: var(--font-serif);
-  font-size: 20px;
+  font-size: var(--fs-h4);
   font-weight: 400;
   color: #1a1a1a;
   margin: 0;
@@ -235,9 +235,9 @@
 
 .about-team__card-role {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: var(--fs-p);
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #6b2fa0;
   margin: 0;
@@ -256,7 +256,7 @@
 
 .about-cta__heading {
   font-family: var(--font-serif);
-  font-size: clamp(40px, 5vw, 68px);
+  font-size: var(--fs-h1);
   font-weight: 400;
   color: #1a1a1a;
   line-height: 1.1;
@@ -266,7 +266,7 @@
 
 .about-cta__sub {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--fs-p);
   font-weight: 300;
   color: #5a5a5a;
   margin: 0;

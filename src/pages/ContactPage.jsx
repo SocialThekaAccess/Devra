@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from '../router'
 import devraLogo from '../assets/devraLogo.png'
+import recognitionImg from '../assets/residential.avif'   // swap with real recognition photo
 import Footer from '../components/Footer'
 import './ContactPage.css'
 
@@ -55,7 +56,7 @@ export default function ContactPage() {
         {/* Heading */}
         <div className="contact-heading-wrap">
           <h1 className="contact-heading">
-            Where your vision takes<br />form
+            Where your vision<br />takes form
           </h1>
           <p className="contact-sub">
             Our team is ready to listen, imagine, and craft spaces that breathe with purpose.
@@ -198,6 +199,25 @@ export default function ContactPage() {
         )}
 
       </main>
+
+      {/* ── Recognition card ── */}
+      <div className="contact-recognition">
+        <div className="contact-recognition__img-wrap">
+          <img src={recognitionImg} alt="Royal Recognition — Architects Diary" className="contact-recognition__img" />
+          {/* Badge */}
+          <div className="contact-recognition__badge">
+            <div className="contact-recognition__badge-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+              </svg>
+            </div>
+            <div className="contact-recognition__badge-text">
+              <span className="contact-recognition__badge-title">Royal Recognition</span>
+              <span className="contact-recognition__badge-sub">Architects Diary</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </div>

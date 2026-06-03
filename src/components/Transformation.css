@@ -43,7 +43,7 @@
 
 .transform-section__heading {
   font-family: var(--font-serif);
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: var(--fs-h2);
   font-weight: 400;
   color: #1a1a1a;
   line-height: 1.15;
@@ -53,7 +53,7 @@
 
 .transform-section__sub {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: var(--fs-p);
   font-weight: 300;
   color: #5a5a5a;
   margin: 0;
@@ -70,7 +70,7 @@
 
 .transform-section__tags li {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: var(--fs-p);
   font-weight: 300;
   color: #4a4a4a;
   letter-spacing: 0.01em;
@@ -216,7 +216,7 @@
 
 .who-section__heading {
   font-family: var(--font-serif);
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: var(--fs-h1);
   font-weight: 400;
   color: #1a1a1a;
   line-height: 1.12;
@@ -227,7 +227,7 @@
 
 .who-section__sub {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: var(--fs-p);
   font-weight: 300;
   color: #5a5a5a;
   line-height: 1.7;
