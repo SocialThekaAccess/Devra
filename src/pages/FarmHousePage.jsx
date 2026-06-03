@@ -1,6 +1,7 @@
 import CategoryPage from './CategoryPage'
 import heroImg   from '../assets/farmHouse.avif'
 import imgGills  from '../assets/projects/fh-gills.png'
+import imgNagra  from '../assets/Nagra Farmhouse.avif'
 
 const projects = [
   {
@@ -20,7 +21,7 @@ const projects = [
     type: 'Farm House',
     name: 'Nagra Farmhouse',
     location: 'Chandigarh',
-    img: heroImg,
+    img: imgNagra,
     overview: 'This farmhouse is conceived as a timeless courtyard residence, where classical proportions and arched colonnades define a strong architectural rhythm. Soft plastered volumes, symmetrical compositions, and deep verandahs create a sense of elegance and permanence.',
   },
 ]
