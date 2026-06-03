@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { Link } from '../router'
+import Navbar from './Navbar'
 import './HeroSlider.css'
 
 const slides = [
@@ -23,7 +25,7 @@ const INTERVAL = 5000
 // How much the image moves relative to scroll — 0.4 = 40% speed (gentle)
 const PARALLAX_SPEED = 0.4
 
-export default function HeroSlider() {
+export default function HeroSlider({ hideContent = false }) {
   const [current, setCurrent] = useState(0)
   const [imageErrors, setImageErrors] = useState({})
   const slidesRef = useRef(null)
@@ -69,6 +71,8 @@ export default function HeroSlider() {
 
   return (
     <section className="hero" aria-label="Hero slideshow">
+      {/* Logo — only over the hero, not floating on whole site */}
+      <Navbar />
       {/* Slides — this layer gets the parallax translateY */}
       <div className="hero__slides" ref={slidesRef}>
         {slides.map((slide, index) => (
@@ -92,25 +96,27 @@ export default function HeroSlider() {
       {/* Dark overlay */}
       <div className="hero__overlay" />
 
-      {/* Content */}
-      <div className="hero__content">
-        <h1 className="hero__heading">
-          Best Architects &amp; <br />
-          Interior Designers in <br />
-          Chandigarh
-        </h1>
-        <p className="hero__subheading">
-          Luxury Architecture That Defines Modern Living
-        </p>
-        <div className="hero__actions">
-          <a href="#services" className="hero__btn">
-            About us <span className="hero__btn-arrow">↗</span>
-          </a>
-          <a href="#contact" className="hero__btn">
-            Contact us <span className="hero__btn-arrow">↗</span>
-          </a>
+      {/* Content — hidden on About page */}
+      {!hideContent && (
+        <div className="hero__content">
+          <h1 className="hero__heading">
+            Best Architects &amp; <br />
+            Interior Designers in <br />
+            Chandigarh
+          </h1>
+          <p className="hero__subheading">
+            Luxury Architecture That Defines Modern Living
+          </p>
+          <div className="hero__actions">
+            <Link to="/about-us" className="hero__btn">
+              About us <span className="hero__btn-arrow">↗</span>
+            </Link>
+            <Link to="/contact" className="hero__btn">
+              Contact us <span className="hero__btn-arrow">↗</span>
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Slide indicators */}
       <div className="hero__dots" role="tablist" aria-label="Slide indicators">

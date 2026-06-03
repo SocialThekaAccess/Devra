@@ -1,26 +1,15 @@
-import Navbar from './components/Navbar'
-import HeroSlider from './components/HeroSlider'
-import Collection from './components/Collection'
-import Transformation from './components/Transformation'
-import VideoSection from './components/VideoSection'
-import CtaBanner from './components/CtaBanner'
-import Footer from './components/Footer'
+import { useRoute } from './router'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
 import './App.css'
 
 function App() {
-  return (
-    <>
-      <Navbar />
-      <main>
-        <HeroSlider />
-        <Collection />
-        <Transformation />
-        <VideoSection />
-        <CtaBanner />
-      </main>
-      <Footer />
-    </>
-  )
+  const path = useRoute()
+
+  if (path === '/about-us') return <AboutPage />
+  if (path === '/contact') return <ContactPage />
+  return <HomePage />
 }
 
 export default App

@@ -1,9 +1,10 @@
+import devraLogo from '../assets/devraLogo.png'
 import './Navbar.css'
 
 export default function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="navbar__logo">DEVRA</div>
-    </nav>
+    <header className="navbar">
+      <img src={devraLogo} alt="Devra" className="navbar__logo" />
+    </header>
   )
 }

@@ -7,7 +7,6 @@
   overflow: hidden;
   padding: 72px 72px 0;
 }
-
 /* ── Main grid ────────────────────────────────────────────────── */
 .footer__container {
   display: flex;
@@ -158,55 +157,32 @@
 
 /* ═══════════════════════════════════════════════════════════════
    DEVRA watermark
+   PNG is 1080×1350 but logo content sits only at rows 513–752
+   (38% top padding, 44% bottom padding)
 ═══════════════════════════════════════════════════════════════ */
 .footer__watermark {
   position: relative;
   z-index: 1;
-  text-align: center;
-  margin-top: 24px;
+  overflow: hidden;
+  /* show only the content band — no transparent gaps */
+  height: 160px;
+  margin-top: 12px;
   pointer-events: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: -8px; /* negative gap not supported — use margin-top on sub instead */
 }
 
-.footer__watermark-main {
+.footer__watermark-img {
+  width: 100%;
+  /* scale tall enough that the content band fills the 160px window */
+  /* content is 17.7% of total height → to get 160px: 160/0.177 ≈ 904px */
+  height: 904px;
+  object-fit: contain;
+  /* shift up by 38% so the content aligns to top of container,
+     then let overflow:hidden do the rest */
+  object-position: center top;
+  margin-top: -343px; /* 904px * 0.38 = 343px */
   display: block;
-  font-family: var(--font-serif);
-  font-size: clamp(100px, 16vw, 220px);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(220, 210, 235, 0.55) 0%,
-    rgba(180, 165, 205, 0.30) 55%,
-    rgba(130, 110, 160, 0.10) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-.footer__watermark-sub {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: clamp(28px, 4.5vw, 60px);
-  font-weight: 400;
-  letter-spacing: 0.35em;
-  line-height: 1;
-  margin-top: 2px;
-  background: linear-gradient(
-    180deg,
-    rgba(200, 190, 220, 0.45) 0%,
-    rgba(150, 135, 175, 0.18) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  opacity: 0.28;
+  filter: brightness(0) invert(1);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -220,9 +196,9 @@
   font-size: 12px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.35);
-  padding: 20px 0 28px;
+  padding: 14px 0 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 /* ═══════════════════════════════════════════════════════════════

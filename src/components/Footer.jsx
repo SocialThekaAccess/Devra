@@ -1,3 +1,5 @@
+import devraLogoFooter from '../assets/devraLogoFooter.png'
+import { Link } from '../router'
 import './Footer.css'
 
 export default function Footer() {
@@ -10,9 +12,9 @@ export default function Footer() {
             Your ideas matter — together, we'll turn<br />
             them into timeless spaces.
           </h2>
-          <a href="#contact" className="footer__cta-btn">
+          <Link to="/contact" className="footer__cta-btn">
             Get in touch&nbsp; ↗
-          </a>
+          </Link>
         </div>
 
         {/* Right column — nav + contact */}
@@ -73,10 +75,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Large "DEVRA" watermark */}
+      {/* Footer logo watermark */}
       <div className="footer__watermark" aria-hidden="true">
-        <span className="footer__watermark-main">DEVRA</span>
-        <span className="footer__watermark-sub">ARCHITECTS</span>
+        <img src={devraLogoFooter} alt="" className="footer__watermark-img" />
       </div>
 
       {/* Bottom copyright */}
