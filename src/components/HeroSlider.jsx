@@ -34,7 +34,7 @@ export default function HeroSlider({ hideContent = false, slides = defaultSlides
 
   const goTo = useCallback((index) => {
     setCurrent((index + slides.length) % slides.length)
-  }, [])
+  }, [slides.length])
 
   // Auto-advance
   useEffect(() => {

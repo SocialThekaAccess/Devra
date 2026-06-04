@@ -36,23 +36,27 @@ export default function CategoryPage({ heroImg, title, description, projects }) 
       {/* Projects grid */}
       <section className="cat-projects">
         <div className="cat-projects__grid">
-          {projects.map((p) => (
-            <div key={p.id} className="cat-project-card">
-              <div className="cat-project-card__img-wrap">
-                <img src={p.img || heroImg} alt={p.name} className="cat-project-card__img" />
-                <div className="cat-project-card__overlay" />
-              </div>
-              <div className="cat-project-card__body">
-                <div className="cat-project-card__meta">
-                  {p.size && <span>{p.size}</span>}
-                  {p.year && <span>{p.year}</span>}
-                  {p.type && <span className="cat-project-card__type">{p.type}</span>}
+          {projects.map((p) => {
+            const CardWrapper = p.to ? Link : 'div'
+            const wrapperProps = p.to ? { to: p.to } : {}
+            return (
+              <CardWrapper key={p.id} className="cat-project-card" {...wrapperProps}>
+                <div className="cat-project-card__img-wrap">
+                  <img src={p.img || heroImg} alt={p.name} className="cat-project-card__img" />
+                  <div className="cat-project-card__overlay" />
                 </div>
-                <h3 className="cat-project-card__name">{p.name}</h3>
-                <p className="cat-project-card__location">{p.location}</p>
-              </div>
-            </div>
-          ))}
+                <div className="cat-project-card__body">
+                  <div className="cat-project-card__meta">
+                    {p.size && <span>{p.size}</span>}
+                    {p.year && <span>{p.year}</span>}
+                    {p.type && <span className="cat-project-card__type">{p.type}</span>}
+                  </div>
+                  <h3 className="cat-project-card__name">{p.name}</h3>
+                  <p className="cat-project-card__location">{p.location}</p>
+                </div>
+              </CardWrapper>
+            )
+          })}
         </div>
       </section>
 
