@@ -3,24 +3,40 @@ import devraLogo from '../assets/devraLogo.png'
 import Footer from '../components/Footer'
 import './ProjectDetailPage.css'
 
-/**
- * Reusable project detail page.
- * Props:
- *   backTo        — e.g. '/residential'
- *   backLabel     — e.g. 'Residential'
- *   title         — project name
- *   location      — location string
- *   category      — category string
- *   size          — project size
- *   year          — year
- *   overview      — paragraph text
- *   images        — array of imported image URLs (first is hero)
- */
 export default function ProjectDetailPage({
-  backTo, backLabel, title, location, category, size, year, overview, images = []
+  backTo, backLabel, title, location, category, size, year, overview, overview2, images = []
 }) {
   const heroImg = images[0]
   const galleryImages = images.slice(1)
+
+  // Split gallery into rows with varying layouts for visual rhythm
+  // Row pattern: [full], [two-col], [full], [three-col], [full], [two-col] ...
+  const buildRows = (imgs) => {
+    const rows = []
+    let i = 0
+    const patterns = ['two', 'full', 'three', 'full', 'two', 'full', 'three']
+    let p = 0
+    while (i < imgs.length) {
+      const pattern = patterns[p % patterns.length]
+      if (pattern === 'full') {
+        rows.push({ type: 'full', items: [imgs[i]] })
+        i += 1
+      } else if (pattern === 'two') {
+        const slice = imgs.slice(i, i + 2)
+        if (slice.length === 1) { rows.push({ type: 'full', items: slice }); i += 1 }
+        else { rows.push({ type: 'two', items: slice }); i += 2 }
+      } else {
+        const slice = imgs.slice(i, i + 3)
+        if (slice.length === 1) { rows.push({ type: 'full', items: slice }); i += 1 }
+        else if (slice.length === 2) { rows.push({ type: 'two', items: slice }); i += 2 }
+        else { rows.push({ type: 'three', items: slice }); i += 3 }
+      }
+      p++
+    }
+    return rows
+  }
+
+  const rows = buildRows(galleryImages)
 
   return (
     <div className="proj-page">
@@ -28,60 +44,73 @@ export default function ProjectDetailPage({
       {/* Back */}
       <Link to={backTo} className="proj-back">← {backLabel}</Link>
 
-      {/* Hero */}
+      {/* Full-viewport hero */}
       <section className="proj-hero">
         <img src={heroImg} alt={title} className="proj-hero__img" />
         <div className="proj-hero__overlay" />
         <header className="proj-hero__nav">
-          <Link to="/">
-            <img src={devraLogo} alt="Devra" className="proj-hero__logo" />
-          </Link>
+          <Link to="/"><img src={devraLogo} alt="Devra" className="proj-hero__logo" /></Link>
         </header>
-      </section>
-
-      {/* Meta + Overview */}
-      <section className="proj-info">
-        <div className="proj-info__left">
-          <h1 className="proj-info__title">{title}</h1>
-          <p className="proj-info__type">Architecture</p>
-          <Link to={backTo} className="proj-info__cat-link">{backLabel}</Link>
-        </div>
-        <div className="proj-info__right">
-          <div className="proj-info__meta">
-            <div className="proj-info__meta-row">
-              <span className="proj-info__meta-label">Location</span>
-              <span className="proj-info__meta-value">{location}</span>
-            </div>
-            <div className="proj-info__meta-row">
-              <span className="proj-info__meta-label">Category</span>
-              <span className="proj-info__meta-value">{category}</span>
-            </div>
-            {size && (
-              <div className="proj-info__meta-row">
-                <span className="proj-info__meta-label">Project Size</span>
-                <span className="proj-info__meta-value">{size}</span>
-              </div>
-            )}
-            {year && (
-              <div className="proj-info__meta-row">
-                <span className="proj-info__meta-label">Year</span>
-                <span className="proj-info__meta-value">{year}</span>
-              </div>
-            )}
-          </div>
-          <div className="proj-info__overview">
-            <h2 className="proj-info__overview-label">Overview</h2>
-            <p className="proj-info__overview-text">{overview}</p>
-          </div>
+        {/* Title over hero bottom-left */}
+        <div className="proj-hero__title-wrap">
+          <h1 className="proj-hero__title">{title}</h1>
+          <span className="proj-hero__category">{category}</span>
         </div>
       </section>
 
-      {/* Gallery */}
-      {galleryImages.length > 0 && (
+      {/* Meta strip */}
+      <section className="proj-meta-strip">
+        <div className="proj-meta-strip__inner">
+          {location && (
+            <div className="proj-meta-strip__item">
+              <span className="proj-meta-strip__label">Location</span>
+              <span className="proj-meta-strip__value">{location}</span>
+            </div>
+          )}
+          {size && (
+            <div className="proj-meta-strip__item">
+              <span className="proj-meta-strip__label">Project Size</span>
+              <span className="proj-meta-strip__value">{size}</span>
+            </div>
+          )}
+          {year && (
+            <div className="proj-meta-strip__item">
+              <span className="proj-meta-strip__label">Year</span>
+              <span className="proj-meta-strip__value">{year}</span>
+            </div>
+          )}
+          {category && (
+            <div className="proj-meta-strip__item">
+              <span className="proj-meta-strip__label">Category</span>
+              <span className="proj-meta-strip__value">{category}</span>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="proj-overview">
+        <div className="proj-overview__inner">
+          <div className="proj-overview__label-col">
+            <span className="proj-overview__label">Overview</span>
+          </div>
+          <div className="proj-overview__text-col">
+            <p className="proj-overview__text">{overview}</p>
+            {overview2 && <p className="proj-overview__text proj-overview__text--mt">{overview2}</p>}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery — architectural grid */}
+      {rows.length > 0 && (
         <section className="proj-gallery">
-          {galleryImages.map((img, i) => (
-            <div key={i} className="proj-gallery__item">
-              <img src={img} alt={`${title} — view ${i + 2}`} className="proj-gallery__img" />
+          {rows.map((row, ri) => (
+            <div key={ri} className={`proj-gallery__row proj-gallery__row--${row.type}`}>
+              {row.items.map((img, ii) => (
+                <div key={ii} className="proj-gallery__cell">
+                  <img src={img} alt={`${title} — ${ri * 3 + ii + 2}`} className="proj-gallery__img" />
+                </div>
+              ))}
             </div>
           ))}
         </section>

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   Project Detail Page
+   Project Detail Page — Architectural Layout
 ═══════════════════════════════════════════════════════════════ */
 .proj-page {
   background: #ece8e1;
@@ -33,8 +33,11 @@
 .proj-hero {
   position: relative;
   height: 100vh;
-  min-height: 560px;
+  min-height: 600px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .proj-hero__img {
@@ -49,7 +52,12 @@
 .proj-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.45) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1) 0%,
+    rgba(0,0,0,0.15) 50%,
+    rgba(0,0,0,0.6) 100%
+  );
 }
 
 .proj-hero__nav {
@@ -72,146 +80,181 @@
   pointer-events: auto;
 }
 
-/* ── Info section ──────────────────────────────────────────────── */
-.proj-info {
+.proj-hero__title-wrap {
+  position: relative;
+  z-index: 2;
+  padding: 0 80px 64px;
   display: flex;
-  gap: 80px;
-  padding: 80px 120px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.proj-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.proj-hero__category {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ── Meta strip ────────────────────────────────────────────────── */
+.proj-meta-strip {
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.proj-meta-strip__inner {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.proj-meta-strip__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 28px 0;
+  border-right: 1px solid rgba(0,0,0,0.08);
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+.proj-meta-strip__item:first-child { padding-left: 0; }
+.proj-meta-strip__item:last-child  { border-right: none; }
+
+.proj-meta-strip__label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.proj-meta-strip__value {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+/* ── Overview ──────────────────────────────────────────────────── */
+.proj-overview {
+  padding: 72px 80px;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Left */
-.proj-info__left {
-  flex: 0 0 280px;
+.proj-overview__inner {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  gap: 80px;
+  align-items: flex-start;
 }
 
-.proj-info__title {
-  font-family: var(--font-serif);
-  font-size: var(--fs-h2);
-  font-weight: 400;
-  color: #1a1a1a;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin: 0;
+.proj-overview__label-col {
+  flex: 0 0 180px;
+  padding-top: 4px;
 }
 
-.proj-info__type {
+.proj-overview__label {
   font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #888;
-  margin: 0;
+  color: #999;
 }
 
-.proj-info__cat-link {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #6b2fa0;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  transition: opacity 0.2s;
-}
-.proj-info__cat-link:hover { opacity: 0.7; }
-
-/* Right */
-.proj-info__right {
+.proj-overview__text-col {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 20px;
 }
 
-.proj-info__meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border-top: 1px solid rgba(0,0,0,0.1);
-}
-
-.proj-info__meta-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-
-.proj-info__meta-label {
+.proj-overview__text {
   font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #888;
-}
-
-.proj-info__meta-value {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 400;
-  color: #1a1a1a;
-  text-align: right;
-}
-
-.proj-info__overview-label {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #888;
-  margin: 0 0 16px;
-}
-
-.proj-info__overview-text {
-  font-family: var(--font-sans);
-  font-size: var(--fs-p);
+  font-size: 16px;
   font-weight: 300;
-  line-height: 1.85;
+  line-height: 1.9;
   color: #4a4a4a;
   margin: 0;
 }
 
-/* ── Gallery ───────────────────────────────────────────────────── */
+/* ── Gallery — architectural grid ─────────────────────────────── */
 .proj-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
   padding: 0 48px 80px;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.proj-gallery__item {
-  border-radius: 16px;
+/* Row types */
+.proj-gallery__row {
+  display: grid;
+  gap: 8px;
+}
+
+.proj-gallery__row--full {
+  grid-template-columns: 1fr;
+}
+
+.proj-gallery__row--two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.proj-gallery__row--three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.proj-gallery__cell {
   overflow: hidden;
-  width: 100%;
+  border-radius: 4px;
+  background: #d4d0c8;
+}
+
+/* Full-row images are shorter, grid images are squarish */
+.proj-gallery__row--full .proj-gallery__cell {
+  aspect-ratio: 16 / 7;
+}
+
+.proj-gallery__row--two .proj-gallery__cell {
+  aspect-ratio: 4 / 3;
+}
+
+.proj-gallery__row--three .proj-gallery__cell {
+  aspect-ratio: 4 / 3;
 }
 
 .proj-gallery__img {
   width: 100%;
-  display: block;
+  height: 100%;
   object-fit: cover;
-  border-radius: 16px;
-  transition: transform 0.5s ease;
+  display: block;
+  transition: transform 0.6s ease;
 }
-.proj-gallery__item:hover .proj-gallery__img {
-  transform: scale(1.01);
+
+.proj-gallery__cell:hover .proj-gallery__img {
+  transform: scale(1.03);
 }
 
 /* ── CTA ───────────────────────────────────────────────────────── */
@@ -220,7 +263,7 @@
 }
 
 .proj-cta__inner {
-  max-width: 1080px;
+  max-width: 1104px;
   margin: 0 auto;
   background: #4a1a6b;
   border-radius: 20px;
@@ -288,14 +331,40 @@
 /* ═══════════════════════════════════════════════════════════════
    Responsive
 ═══════════════════════════════════════════════════════════════ */
-@media (max-width: 900px) {
-  .proj-info {
-    flex-direction: column;
-    padding: 56px 24px;
-    gap: 40px;
+@media (max-width: 1024px) {
+  .proj-hero__title-wrap { padding: 0 48px 56px; }
+  .proj-meta-strip__inner { padding: 0 48px; }
+  .proj-overview { padding: 56px 48px; }
+  .proj-gallery { padding: 0 32px 64px; }
+  .proj-cta { padding: 0 32px 64px; }
+}
+
+@media (max-width: 768px) {
+  .proj-hero__title-wrap { padding: 0 24px 48px; }
+  .proj-meta-strip__inner {
+    flex-wrap: wrap;
+    padding: 0 24px;
   }
-  .proj-info__left { flex: none; }
-  .proj-gallery { padding: 0 24px 56px; }
-  .proj-cta { padding: 0 20px 56px; }
+  .proj-meta-strip__item {
+    flex: 1 1 45%;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding-left: 0;
+  }
+  .proj-overview { padding: 48px 24px; }
+  .proj-overview__inner { flex-direction: column; gap: 24px; }
+  .proj-overview__label-col { flex: none; }
+  .proj-gallery {
+    padding: 0 16px 56px;
+    gap: 6px;
+  }
+  .proj-gallery__row--three { grid-template-columns: 1fr 1fr; }
+  .proj-cta { padding: 0 16px 56px; }
   .proj-cta__inner { padding: 48px 24px 56px; border-radius: 16px; }
+}
+
+@media (max-width: 480px) {
+  .proj-gallery__row--two,
+  .proj-gallery__row--three { grid-template-columns: 1fr; }
+  .proj-gallery__row--full .proj-gallery__cell { aspect-ratio: 4 / 3; }
 }
