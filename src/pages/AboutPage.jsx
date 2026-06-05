@@ -87,7 +87,13 @@ export default function AboutPage() {
           {team.map((member) => (
             <div key={member.id} className="about-team__card">
               <div className="about-team__card-img-wrap">
-                <img src={member.img} alt={member.name} className="about-team__card-img" />
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="about-team__card-img"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div className="about-team__card-body">
                 <h3 className="about-team__card-name">{member.name}</h3>

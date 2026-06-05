@@ -77,7 +77,13 @@ function BeforeAfterSlider() {
         updatePosition(event.touches[0].clientX)
       }}
     >
-      <img src={afterImg} alt="After transformation" className="ba-slider__img--after" />
+      <img
+        src={afterImg}
+        alt="After transformation"
+        className="ba-slider__img--after"
+        loading="lazy"
+        decoding="async"
+      />
 
       <div className="ba-slider__before-wrap" style={{ width: `${position}%` }}>
         <img
@@ -85,6 +91,8 @@ function BeforeAfterSlider() {
           src={beforeImg}
           alt="Before transformation"
           className="ba-slider__img--before"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 

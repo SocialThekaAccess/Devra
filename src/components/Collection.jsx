@@ -55,7 +55,13 @@ function CollectionCard({ item }) {
         className="col-card__img-wrap"
         style={{ background: item.fallback }}
       >
-        <img src={item.src} alt={item.label} className="col-card__img" />
+        <img
+          src={item.src}
+          alt={item.label}
+          className="col-card__img"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="col-card__overlay" />
         <span className="col-card__label">{item.label}</span>
       </div>
@@ -76,6 +82,8 @@ function ServiceCard({ card }) {
           src={card.src}
           alt={titleLines.join(' ')}
           className="svc-card__img"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="svc-card__body">

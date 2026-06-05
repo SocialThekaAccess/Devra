@@ -34,15 +34,16 @@ export default function HeroSlider({ hideContent = false, slides = defaultSlides
 
   const goTo = useCallback((index) => {
     setCurrent((index + slides.length) % slides.length)
-  }, [])
+  }, [slides.length])
 
   // Auto-advance
   useEffect(() => {
     const timer = setInterval(() => {
-      goTo(current + 1)
+      setCurrent((prev) => (prev + 1) % slides.length)
     }, INTERVAL)
+
     return () => clearInterval(timer)
-  }, [current, goTo])
+  }, [slides.length])
 
   // Parallax — translate the slides layer upward as user scrolls down
   useEffect(() => {
@@ -86,6 +87,9 @@ export default function HeroSlider({ hideContent = false, slides = defaultSlides
                 src={slide.src}
                 alt=""
                 className="hero__slide-img"
+                loading={index === current ? 'eager' : 'lazy'}
+                decoding="async"
+                fetchPriority={index === current ? 'high' : 'low'}
                 onError={() => handleImageError(slide.id)}
               />
             )}

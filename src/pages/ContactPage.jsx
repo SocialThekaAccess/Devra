@@ -203,7 +203,13 @@ export default function ContactPage() {
       {/* ── Recognition card ── */}
       <div className="contact-recognition">
         <div className="contact-recognition__img-wrap">
-          <img src={recognitionImg} alt="Royal Recognition — Architects Diary" className="contact-recognition__img" />
+          <img
+            src={recognitionImg}
+            alt="Royal Recognition — Architects Diary"
+            className="contact-recognition__img"
+            loading="lazy"
+            decoding="async"
+          />
           {/* Badge */}
           <div className="contact-recognition__badge">
             <div className="contact-recognition__badge-icon">

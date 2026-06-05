@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+/* eslint-disable react-refresh/only-export-components */
+import { startTransition, useEffect, useState } from 'react'
 
 /**
  * Minimal client-side router — no dependencies.
@@ -8,7 +9,12 @@ export function useRoute() {
   const [path, setPath] = useState(window.location.pathname)
 
   useEffect(() => {
-    const onPop = () => setPath(window.location.pathname)
+    const onPop = () => {
+      startTransition(() => {
+        setPath(window.location.pathname)
+      })
+    }
+
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])

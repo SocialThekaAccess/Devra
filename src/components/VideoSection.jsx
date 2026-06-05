@@ -1,16 +1,21 @@
-import { useState, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './VideoSection.css'
 
 import devraVideo from '../assets/devraVideo.mp4'
-import videoPoster from '../assets/residential.avif'  // swap with a real thumbnail if you have one
+import videoPoster from '../assets/residential.avif'
 
 export default function VideoSection() {
   const [playing, setPlaying] = useState(false)
   const videoRef = useRef(null)
 
+  useEffect(() => {
+    if (!playing) return
+
+    videoRef.current?.play().catch(() => {})
+  }, [playing])
+
   const handlePlay = () => {
     setPlaying(true)
-    videoRef.current?.play()
   }
 
   return (
@@ -22,6 +27,8 @@ export default function VideoSection() {
             src={videoPoster}
             alt="Devra architecture showreel"
             className="video-section__poster"
+            loading="lazy"
+            decoding="async"
           />
         )}
 
@@ -32,8 +39,9 @@ export default function VideoSection() {
           poster={videoPoster}
           controls={playing}
           playsInline
+          preload="none"
           onEnded={() => setPlaying(false)}
-          src={devraVideo}
+          src={playing ? devraVideo : undefined}
         />
 
         {/* Dark overlay (hidden when playing) */}

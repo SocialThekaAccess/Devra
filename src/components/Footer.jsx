@@ -77,7 +77,13 @@ export default function Footer() {
 
       {/* Footer logo watermark */}
       <div className="footer__watermark" aria-hidden="true">
-        <img src={devraLogoFooter} alt="" className="footer__watermark-img" />
+        <img
+          src={devraLogoFooter}
+          alt=""
+          className="footer__watermark-img"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
       {/* Bottom copyright */}
