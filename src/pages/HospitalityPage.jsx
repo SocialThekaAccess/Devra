@@ -11,6 +11,7 @@ const projects = [
     name: 'Castle Grey',
     location: 'Rohtak, Haryana',
     img: imgCg1,
+    to: '/hospitality/castle-grey',
     overview: 'A refined space where geometry and warmth are balanced through slatted walls, layered ceilings, and suspended greens.',
   },
 ]

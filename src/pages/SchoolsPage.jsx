@@ -11,6 +11,7 @@ const projects = [
     name: 'M S School',
     location: 'India',
     img: imgMs1,
+    to: '/schools/m-s-school',
     overview: 'Planned as a structured yet breathable campus — clear linear planning and layered façades create a strong sense of order. Controlled openings balance light, ventilation, and privacy.',
   },
   {
@@ -21,6 +22,7 @@ const projects = [
     name: 'J P International',
     location: 'Rohtak, Haryana',
     img: heroImg,
+    to: '/schools/j-p-international',
     overview: 'A contemporary institutional landmark — strong linear planning and a layered façade of exposed brick, concrete bands, and dynamic screening balances openness with control.',
   },
 ]

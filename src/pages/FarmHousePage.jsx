@@ -12,6 +12,7 @@ const projects = [
     name: "Gill's Farmhouse",
     location: 'Baddi Road',
     img: imgGills,
+    to: '/farm-houses/gill-s-farmhouse',
     overview: "This farmhouse is designed as a composition of solid brick volumes and light, open frames, creating a balance between mass and transparency. Perforated jaali walls and deep recesses introduce layered depth, allowing natural light to filter softly through spaces.",
   },
   {
@@ -22,6 +23,7 @@ const projects = [
     name: 'Nagra Farmhouse',
     location: 'Chandigarh',
     img: imgNagra,
+    to: '/farm-houses/nagra-farmhouse',
     overview: 'This farmhouse is conceived as a timeless courtyard residence, where classical proportions and arched colonnades define a strong architectural rhythm. Soft plastered volumes, symmetrical compositions, and deep verandahs create a sense of elegance and permanence.',
   },
 ]

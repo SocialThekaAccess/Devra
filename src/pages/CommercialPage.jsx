@@ -13,6 +13,7 @@ const projects = [
     name: 'Devra Architects',
     location: 'PH-1 Cassia, New Chandigarh',
     img: imgDevra,
+    to: '/commercial/devra-architects',
     overview: 'A refined workspace crafted with soft lighting, curved forms, and a calm neutral palette - shaping an environment that feels inviting, efficient, and elevated.',
   },
   {
@@ -23,6 +24,7 @@ const projects = [
     name: 'FortoFino',
     location: 'Srinagar',
     img: fortofinoImg,
+    to: '/commercial/fortofino',
     overview: 'A refined boutique interior crafted in soft neutrals, sculpted arches, and warm lighting - creating an atmosphere of quiet luxury.',
   },
   {
@@ -33,6 +35,7 @@ const projects = [
     name: 'Milk Point',
     location: 'Chandigarh',
     img: milkPointImg,
+    to: '/commercial/milk-point',
     overview: 'A refined retail interior blending warm materials, clean geometry, and controlled lighting - balancing display clarity with experiential movement.',
   },
 ]
