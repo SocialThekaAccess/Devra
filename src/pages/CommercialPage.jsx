@@ -1,7 +1,7 @@
 import CategoryPage from './CategoryPage'
 import heroImg from '../assets/commercial.jpg'
 import fortofinoImg from '../assets/fortofino.avif'
-import milkPointImg from '../assets/milk point.avif'
+import milkPointImg from '../assets/milk-point.avif'
 import imgDevra from '../assets/projects/com-devra.jpg'
 
 const projects = [

@@ -6,15 +6,10 @@ import { startTransition, useEffect, useState } from 'react'
  * Reads window.location.pathname and re-renders on popstate.
  */
 export function useRoute() {
-  const [path, setPath] = useState(window.location.pathname)
+  const [path, setPath] = useState(decodeURIComponent(window.location.pathname))
 
   useEffect(() => {
-    const onPop = () => {
-      startTransition(() => {
-        setPath(window.location.pathname)
-      })
-    }
-
+    const onPop = () => setPath(decodeURIComponent(window.location.pathname))
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])

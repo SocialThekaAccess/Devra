@@ -1,7 +1,7 @@
 import CategoryPage from './CategoryPage'
 import heroImg   from '../assets/farmHouse.avif'
 import imgGills  from '../assets/projects/fh-gills.png'
-import imgNagra  from '../assets/Nagra Farmhouse.avif'
+import imgNagra  from '../assets/nagra-farmhouse.avif'
 
 const projects = [
   {
