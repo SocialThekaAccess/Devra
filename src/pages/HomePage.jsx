@@ -30,7 +30,7 @@ export default function HomePage() {
   return (
     <>
       <main>
-        <HeroSlider slides={homeSlides} />
+        <HeroSlider slides={homeSlides} overlayVariant="soft" />
         <Collection />
         <Transformation />
         <VideoSection />

@@ -24,7 +24,11 @@ const defaultSlides = [
 const INTERVAL = 5000
 const PARALLAX_SPEED = 0.4
 
-export default function HeroSlider({ hideContent = false, slides = defaultSlides }) {
+export default function HeroSlider({
+  hideContent = false,
+  slides = defaultSlides,
+  overlayVariant = 'default',
+}) {
   const [current, setCurrent] = useState(0)
   const [imageErrors, setImageErrors] = useState({})
   const slidesRef = useRef(null)
@@ -102,7 +106,7 @@ export default function HeroSlider({ hideContent = false, slides = defaultSlides
         ))}
       </div>
 
-      <div className="hero__overlay" />
+      <div className={`hero__overlay ${overlayVariant !== 'default' ? `hero__overlay--${overlayVariant}` : ''}`} />
 
       {!hideContent && (
         <div className="hero__content">
