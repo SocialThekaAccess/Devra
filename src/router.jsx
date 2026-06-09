@@ -1,15 +1,39 @@
 /* eslint-disable react-refresh/only-export-components */
-import { startTransition, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-/**
- * Minimal client-side router — no dependencies.
- * Reads window.location.pathname and re-renders on popstate.
- */
+function scrollToHash(hash) {
+  if (!hash) {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    return
+  }
+
+  const target = document.getElementById(hash.slice(1))
+  if (target) {
+    target.scrollIntoView({ block: 'start', behavior: 'smooth' })
+  } else {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }
+}
+
+function syncScrollToLocation() {
+  const { hash } = window.location
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      scrollToHash(hash)
+    })
+  })
+}
+
 export function useRoute() {
   const [path, setPath] = useState(decodeURIComponent(window.location.pathname))
 
   useEffect(() => {
-    const onPop = () => setPath(decodeURIComponent(window.location.pathname))
+    const onPop = () => {
+      setPath(decodeURIComponent(window.location.pathname))
+      syncScrollToLocation()
+    }
+
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])
@@ -18,19 +42,20 @@ export function useRoute() {
 }
 
 export function navigate(to) {
-  window.history.pushState({}, '', to)
+  const url = new URL(to, window.location.origin)
+
+  window.history.pushState({}, '', `${url.pathname}${url.search}${url.hash}`)
   window.dispatchEvent(new PopStateEvent('popstate'))
-  window.scrollTo(0, 0)
 }
 
-/** Drop-in <Link> replacement */
 export function Link({ to, children, className, style }) {
-  const handleClick = (e) => {
-    // Let normal browser behaviour handle external links or hash links
-    if (to.startsWith('http') || to.startsWith('#')) return
-    e.preventDefault()
+  const handleClick = (event) => {
+    if (to.startsWith('http') || to.startsWith('mailto:') || to.startsWith('tel:')) return
+
+    event.preventDefault()
     navigate(to)
   }
+
   return (
     <a href={to} className={className} style={style} onClick={handleClick}>
       {children}

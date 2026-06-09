@@ -5,7 +5,7 @@ import img3 from '../../assets/projects/com-devra-arch-3.jpg'
 import img4 from '../../assets/projects/com-devra-arch-4.jpg'
 import img5 from '../../assets/projects/com-devra-arch-5.jpg'
 import img6 from '../../assets/projects/com-devra-arch-6.jpg'
-import img7 from '../../assets/projects/com-devra-arch-7.jpg'
+import img7 from '../../assets/projects/com-devra-arch-7.avif'
 import img8 from '../../assets/projects/com-devra-arch-8.jpg'
 import img9 from '../../assets/projects/com-devra-arch-9.jpg'
 

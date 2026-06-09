@@ -1,12 +1,12 @@
 import ProjectDetailPage from '../ProjectDetailPage'
-import img1 from '../../assets/projects/hou-panchkula-1.jpg'
-import img2 from '../../assets/projects/hou-panchkula-2.jpg'
-import img3 from '../../assets/projects/hou-panchkula-3.jpg'
-import img4 from '../../assets/projects/hou-panchkula-4.jpg'
-import img5 from '../../assets/projects/hou-panchkula-5.jpg'
-import img6 from '../../assets/projects/hou-panchkula-6.png'
-import img7 from '../../assets/projects/hou-panchkula-7.png'
-import img8 from '../../assets/projects/hou-panchkula-8.png'
+import img1 from '../../assets/projects/hou-panchkula-1.avif'
+import img2 from '../../assets/projects/hou-panchkula-2.avif'
+import img3 from '../../assets/projects/hou-panchkula-3.avif'
+import img4 from '../../assets/projects/hou-panchkula-4.avif'
+import img5 from '../../assets/projects/hou-panchkula-5.avif'
+import img6 from '../../assets/projects/hou-panchkula-6.avif'
+import img7 from '../../assets/projects/hou-panchkula-7.avif'
+import img8 from '../../assets/projects/hou-panchkula-8.avif'
 
 export default function HouPanchkulaPage() {
   return (

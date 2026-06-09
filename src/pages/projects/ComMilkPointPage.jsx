@@ -1,6 +1,6 @@
 import ProjectDetailPage from '../ProjectDetailPage'
-import img1 from '../../assets/projects/com-milk-point-1.png'
-import img2 from '../../assets/projects/com-milk-point-2.png'
+import img1 from '../../assets/projects/com-milk-point-1.avif'
+import img2 from '../../assets/projects/com-milk-point-2.avif'
 
 export default function ComMilkPointPage() {
   return (

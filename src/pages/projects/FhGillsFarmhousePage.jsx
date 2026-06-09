@@ -1,12 +1,12 @@
 import ProjectDetailPage from '../ProjectDetailPage'
-import img1 from '../../assets/projects/fh-gills-1.png'
-import img2 from '../../assets/projects/fh-gills-2.png'
-import img3 from '../../assets/projects/fh-gills-3.png'
-import img4 from '../../assets/projects/fh-gills-4.png'
-import img5 from '../../assets/projects/fh-gills-5.png'
-import img6 from '../../assets/projects/fh-gills-6.png'
-import img7 from '../../assets/projects/fh-gills-7.png'
-import img8 from '../../assets/projects/fh-gills-8.png'
+import img1 from '../../assets/projects/fh-gills-1.avif'
+import img2 from '../../assets/projects/fh-gills-2.avif'
+import img3 from '../../assets/projects/fh-gills-3.avif'
+import img4 from '../../assets/projects/fh-gills-4.avif'
+import img5 from '../../assets/projects/fh-gills-5.avif'
+import img6 from '../../assets/projects/fh-gills-6.avif'
+import img7 from '../../assets/projects/fh-gills-7.avif'
+import img8 from '../../assets/projects/fh-gills-8.avif'
 
 export default function FhGillsFarmhousePage() {
   return (

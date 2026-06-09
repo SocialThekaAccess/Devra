@@ -1,7 +1,7 @@
 import ProjectDetailPage from '../ProjectDetailPage'
-import img1 from '../../assets/projects/res-kangs.jpg'
-import img2 from '../../assets/projects/res-kangs-2.jpg'
-import img3 from '../../assets/projects/res-kangs-3.jpg'
+import img1 from '../../assets/projects/res-kangs.avif'
+import img2 from '../../assets/projects/res-kangs-2.avif'
+import img3 from '../../assets/projects/res-kangs-3.avif'
 
 export default function ResKangsPage() {
   return (

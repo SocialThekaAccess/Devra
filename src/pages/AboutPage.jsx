@@ -10,7 +10,7 @@ const values = [
     id: 'vision',
     label: 'Our Vision',
     heading: 'Design depth\n& versatility',
-    body: 'To build a practice trusted for its design depth and versatility — delivering modern, classical, neo and parametric architecture with one promise: thoughtful, precise and enduring work.',
+    body: 'To build a practice trusted for its design depth and versatility, delivering modern, classical, neo and parametric architecture with one promise: thoughtful, precise and enduring work.',
   },
   {
     id: 'mission',
@@ -50,34 +50,37 @@ const team = [
 export default function AboutPage() {
   return (
     <div className="about-page">
-
-      {/* ── Hero — same slider as home, no text content ── */}
       <HeroSlider hideContent />
 
-      {/* ── Back link overlaid on hero ── */}
-      <Link to="/" className="about-back-btn">← Back to Home</Link>
+      <Link to="/" className="about-back-btn">
+        &lt;- Back to Home
+      </Link>
 
-      {/* ── Vision / Mission / Values ── */}
       <section className="about-values">
-        {values.map((v, i) => (
-          <div key={v.id} className={`about-values__item ${i % 2 !== 0 ? 'about-values__item--alt' : ''}`}>
+        {values.map((value, index) => (
+          <div
+            key={value.id}
+            className={`about-values__item ${index % 2 !== 0 ? 'about-values__item--alt' : ''}`}
+          >
             <div className="about-values__text">
-              <span className="about-values__label">{v.label}</span>
+              <span className="about-values__label">{value.label}</span>
               <h2 className="about-values__heading">
-                {v.heading.split('\n').map((line, j) => (
-                  <span key={j}>{line}{j < v.heading.split('\n').length - 1 && <br />}</span>
+                {value.heading.split('\n').map((line, lineIndex, lines) => (
+                  <span key={line}>
+                    {line}
+                    {lineIndex < lines.length - 1 && <br />}
+                  </span>
                 ))}
               </h2>
-              <p className="about-values__body">{v.body}</p>
+              <p className="about-values__body">{value.body}</p>
             </div>
             <div className="about-values__number" aria-hidden="true">
-              0{i + 1}
+              0{index + 1}
             </div>
           </div>
         ))}
       </section>
 
-      {/* ── Team ── */}
       <section className="about-team">
         <div className="about-team__header">
           <span className="about-team__pill">The People</span>
@@ -104,16 +107,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
       <section className="about-cta">
         <h2 className="about-cta__heading">
-          Ready to start<br />your project?
+          Ready to start
+          <br />
+          your project?
         </h2>
-        <p className="about-cta__sub">
-          Let's create something enduring together.
-        </p>
-        <Link to="/" className="about-cta__btn">
-          Get in touch ↗
+        <p className="about-cta__sub">Let's create something enduring together.</p>
+        <Link to="/contact" className="about-cta__btn">
+          Get in touch -&gt;
         </Link>
       </section>
 

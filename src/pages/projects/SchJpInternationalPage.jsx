@@ -1,7 +1,7 @@
 import ProjectDetailPage from '../ProjectDetailPage'
-import img1 from '../../assets/projects/sch-jp-1.png'
-import img2 from '../../assets/projects/sch-jp-2.png'
-import img3 from '../../assets/projects/sch-jp-3.png'
+import img1 from '../../assets/projects/sch-jp-1.avif'
+import img2 from '../../assets/projects/sch-jp-2.avif'
+import img3 from '../../assets/projects/sch-jp-3.avif'
 
 export default function SchJpInternationalPage() {
   return (

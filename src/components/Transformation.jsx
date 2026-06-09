@@ -1,8 +1,9 @@
-import { useState, useRef, useCallback, useEffect } from 'react'
+import { useRef, useState } from 'react'
+import { Link } from '../router'
 import './Transformation.css'
 
-import beforeImg from '../assets/before.jpeg'
-import afterImg from '../assets/after.jpeg'
+import beforeImg from '../assets/before.avif'
+import afterImg from '../assets/after.avif'
 
 const tags = [
   'Architectural Balance',
@@ -14,83 +15,71 @@ const tags = [
 
 function BeforeAfterSlider() {
   const [position, setPosition] = useState(50)
-  const containerRef = useRef(null)
-  const beforeImgRef = useRef(null)
   const dragging = useRef(false)
 
-  useEffect(() => {
-    const sync = () => {
-      if (containerRef.current && beforeImgRef.current) {
-        beforeImgRef.current.style.width = `${containerRef.current.offsetWidth}px`
-      }
-    }
-
-    sync()
-    window.addEventListener('resize', sync)
-    return () => window.removeEventListener('resize', sync)
-  }, [])
-
-  const updatePosition = useCallback((clientX) => {
-    const rect = containerRef.current.getBoundingClientRect()
+  const updatePosition = (clientX, element) => {
+    const rect = element.getBoundingClientRect()
     const x = Math.max(0, Math.min(clientX - rect.left, rect.width))
     setPosition((x / rect.width) * 100)
-  }, [])
-
-  const onMouseDown = (event) => {
-    dragging.current = true
-    event.preventDefault()
   }
 
-  useEffect(() => {
-    const onMouseMove = (event) => {
-      if (dragging.current) updatePosition(event.clientX)
-    }
-    const onMouseUp = () => {
-      dragging.current = false
-    }
-    const onTouchMove = (event) => {
-      if (dragging.current) updatePosition(event.touches[0].clientX)
-    }
-    const onTouchEnd = () => {
-      dragging.current = false
+  const handlePointerDown = (event) => {
+    dragging.current = true
+    event.currentTarget.setPointerCapture?.(event.pointerId)
+    updatePosition(event.clientX, event.currentTarget)
+  }
+
+  const handlePointerMove = (event) => {
+    if (!dragging.current) return
+    updatePosition(event.clientX, event.currentTarget)
+  }
+
+  const handlePointerUp = (event) => {
+    dragging.current = false
+    event.currentTarget.releasePointerCapture?.(event.pointerId)
+  }
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault()
+      setPosition((current) => Math.max(0, current - 5))
     }
 
-    window.addEventListener('mousemove', onMouseMove)
-    window.addEventListener('mouseup', onMouseUp)
-    window.addEventListener('touchmove', onTouchMove)
-    window.addEventListener('touchend', onTouchEnd)
-
-    return () => {
-      window.removeEventListener('mousemove', onMouseMove)
-      window.removeEventListener('mouseup', onMouseUp)
-      window.removeEventListener('touchmove', onTouchMove)
-      window.removeEventListener('touchend', onTouchEnd)
+    if (event.key === 'ArrowRight') {
+      event.preventDefault()
+      setPosition((current) => Math.min(100, current + 5))
     }
-  }, [updatePosition])
+  }
 
   return (
     <div
       className="ba-slider"
-      ref={containerRef}
-      onTouchStart={(event) => {
-        dragging.current = true
-        updatePosition(event.touches[0].clientX)
-      }}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
+      onPointerLeave={handlePointerUp}
+      role="slider"
+      aria-label="Before and after room transformation comparison"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(position)}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
     >
       <img
         src={afterImg}
         alt="After transformation"
-        className="ba-slider__img--after"
+        className="ba-slider__img ba-slider__img--after"
         loading="lazy"
         decoding="async"
       />
 
       <div className="ba-slider__before-wrap" style={{ width: `${position}%` }}>
         <img
-          ref={beforeImgRef}
           src={beforeImg}
           alt="Before transformation"
-          className="ba-slider__img--before"
+          className="ba-slider__img ba-slider__img--before"
           loading="lazy"
           decoding="async"
         />
@@ -99,14 +88,11 @@ function BeforeAfterSlider() {
       <div className="ba-slider__divider" style={{ left: `${position}%` }} />
 
       <button
+        type="button"
         className="ba-slider__handle"
         style={{ left: `${position}%` }}
-        onMouseDown={onMouseDown}
-        onTouchStart={(event) => {
-          dragging.current = true
-          event.stopPropagation()
-        }}
-        aria-label="Drag to compare before and after"
+        aria-hidden="true"
+        tabIndex={-1}
       >
         <svg
           width="22"
@@ -137,9 +123,7 @@ export default function Transformation() {
       <section className="transform-section" id="features">
         <div className="transform-section__left">
           <span className="transform-section__pill">Room Transformation</span>
-          <h2 className="transform-section__heading">
-            The Devra transformation
-          </h2>
+          <h2 className="transform-section__heading">The Devra transformation</h2>
           <p className="transform-section__sub">Every project is a transformation.</p>
           <ul className="transform-section__tags">
             {tags.map((tag) => (
@@ -165,9 +149,9 @@ export default function Transformation() {
           <br />
           (SPA, IIT, CCA, NIT).
         </p>
-        <a href="#about" className="who-section__btn">
+        <Link to="/about-us" className="who-section__btn">
           KNOW MORE ABOUT US&nbsp; {'->'}
-        </a>
+        </Link>
       </section>
     </>
   )

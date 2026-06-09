@@ -22,7 +22,6 @@ const defaultSlides = [
 ]
 
 const INTERVAL = 5000
-// How much the image moves relative to scroll — 0.4 = 40% speed (gentle)
 const PARALLAX_SPEED = 0.4
 
 export default function HeroSlider({ hideContent = false, slides = defaultSlides }) {
@@ -36,8 +35,9 @@ export default function HeroSlider({ hideContent = false, slides = defaultSlides
     setCurrent((index + slides.length) % slides.length)
   }, [slides.length])
 
-  // Auto-advance
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length)
     }, INTERVAL)
@@ -45,11 +45,15 @@ export default function HeroSlider({ hideContent = false, slides = defaultSlides
     return () => clearInterval(timer)
   }, [slides.length])
 
-  // Parallax — translate the slides layer upward as user scrolls down
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 900) {
+      return undefined
+    }
+
     const onScroll = () => {
       scrollYRef.current = window.scrollY
       if (rafRef.current) return
+
       rafRef.current = requestAnimationFrame(() => {
         if (slidesRef.current) {
           const offset = scrollYRef.current * PARALLAX_SPEED
@@ -72,15 +76,15 @@ export default function HeroSlider({ hideContent = false, slides = defaultSlides
 
   return (
     <section className="hero" aria-label="Hero slideshow">
-      {/* Logo — only over the hero, not floating on whole site */}
       <Navbar />
-      {/* Slides — this layer gets the parallax translateY */}
+
       <div className="hero__slides" ref={slidesRef}>
         {slides.map((slide, index) => (
           <div
             key={slide.id}
             className={`hero__slide ${index === current ? 'hero__slide--active' : ''}`}
             style={imageErrors[slide.id] ? { background: slide.fallback } : undefined}
+            aria-hidden={index !== current}
           >
             {!imageErrors[slide.id] && (
               <img
@@ -90,6 +94,7 @@ export default function HeroSlider({ hideContent = false, slides = defaultSlides
                 loading={index === current ? 'eager' : 'lazy'}
                 decoding="async"
                 fetchPriority={index === current ? 'high' : 'low'}
+                sizes="100vw"
                 onError={() => handleImageError(slide.id)}
               />
             )}
@@ -97,32 +102,27 @@ export default function HeroSlider({ hideContent = false, slides = defaultSlides
         ))}
       </div>
 
-      {/* Dark overlay */}
       <div className="hero__overlay" />
 
-      {/* Content — hidden on About page */}
       {!hideContent && (
         <div className="hero__content">
           <h1 className="hero__heading">
-            Best Architects &amp; <br />
-            Interior Designers in <br />
-            Chandigarh
+            Live The Dream
           </h1>
           <p className="hero__subheading">
             Luxury Architecture That Defines Modern Living
           </p>
           <div className="hero__actions">
             <Link to="/about-us" className="hero__btn">
-              About us <span className="hero__btn-arrow">↗</span>
+              About us <span className="hero__btn-arrow">-&gt;</span>
             </Link>
             <Link to="/contact" className="hero__btn">
-              Contact us <span className="hero__btn-arrow">↗</span>
+              Contact us <span className="hero__btn-arrow">-&gt;</span>
             </Link>
           </div>
         </div>
       )}
 
-      {/* Slide indicators */}
       <div className="hero__dots" role="tablist" aria-label="Slide indicators">
         {slides.map((slide, index) => (
           <button
@@ -136,7 +136,6 @@ export default function HeroSlider({ hideContent = false, slides = defaultSlides
         ))}
       </div>
 
-      {/* Progress bar */}
       <div className="hero__progress">
         <div
           key={current}

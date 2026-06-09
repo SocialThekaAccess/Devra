@@ -1,7 +1,7 @@
 import ProjectDetailPage from '../ProjectDetailPage'
-import img1 from '../../assets/projects/fh-nagra-1.png'
-import img2 from '../../assets/projects/fh-nagra-2.png'
-import img3 from '../../assets/projects/fh-nagra-3.png'
+import img1 from '../../assets/projects/fh-nagra-1.avif'
+import img2 from '../../assets/projects/fh-nagra-2.avif'
+import img3 from '../../assets/projects/fh-nagra-3.avif'
 
 export default function FhNagraFarmhousePage() {
   return (

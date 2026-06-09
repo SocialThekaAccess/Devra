@@ -1,9 +1,11 @@
+import { Link } from '../router'
 import './CtaBanner.css'
 
 export default function CtaBanner() {
   return (
     <section className="cta-banner-wrap" id="contact">
       <div className="cta-banner">
+        <span className="cta-banner__dot" aria-hidden="true" />
         <h2 className="cta-banner__heading">Let's</h2>
 
         <p className="cta-banner__body">
@@ -11,9 +13,9 @@ export default function CtaBanner() {
           here to bring beauty, purpose, and elegance to your space.
         </p>
 
-        <a href="#contact" className="cta-banner__btn">
-          Let's talk&nbsp; ↗
-        </a>
+        <Link to="/contact" className="cta-banner__btn">
+          Let's talk&nbsp; -&gt;
+        </Link>
       </div>
     </section>
   )

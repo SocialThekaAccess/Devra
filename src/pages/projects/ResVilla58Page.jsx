@@ -1,12 +1,12 @@
 import ProjectDetailPage from '../ProjectDetailPage'
 import img1 from '../../assets/projects/res-villa-58.jpg'
-import img2 from '../../assets/projects/res-villa-58-2.jpg'
-import img3 from '../../assets/projects/res-villa-58-3.jpg'
+import img2 from '../../assets/projects/res-villa-58-2.avif'
+import img3 from '../../assets/projects/res-villa-58-3.avif'
 import img4 from '../../assets/projects/res-villa-58-4.jpg'
 import img5 from '../../assets/projects/res-villa-58-5.jpg'
 import img6 from '../../assets/projects/res-villa-58-6.jpg'
 import img7 from '../../assets/projects/res-villa-58-7.jpg'
-import img8 from '../../assets/projects/res-villa-58-8.jpg'
+import img8 from '../../assets/projects/res-villa-58-8.avif'
 
 export default function ResVilla58Page() {
   return (

@@ -3,11 +3,11 @@ import img1 from '../../assets/projects/res-villa-303.jpg'
 import img2 from '../../assets/projects/res-villa-303-2.jpg'
 import img3 from '../../assets/projects/res-villa-303-3.jpg'
 import img4 from '../../assets/projects/res-villa-303-4.jpg'
-import img5 from '../../assets/projects/res-villa-303-5.jpg'
-import img6 from '../../assets/projects/res-villa-303-6.jpg'
-import img7 from '../../assets/projects/res-villa-303-7.jpg'
-import img8 from '../../assets/projects/res-villa-303-8.jpg'
-import img9 from '../../assets/projects/res-villa-303-9.jpg'
+import img5 from '../../assets/projects/res-villa-303-5.avif'
+import img6 from '../../assets/projects/res-villa-303-6.avif'
+import img7 from '../../assets/projects/res-villa-303-7.avif'
+import img8 from '../../assets/projects/res-villa-303-8.avif'
+import img9 from '../../assets/projects/res-villa-303-9.avif'
 
 export default function ResVilla303Page() {
   return (

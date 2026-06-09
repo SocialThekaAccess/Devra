@@ -1,6 +1,6 @@
 import CategoryPage from './CategoryPage'
 import heroImg from '../assets/schools.avif'
-import imgMs1  from '../assets/projects/sch-ms-school.png'
+import imgMs1  from '../assets/projects/sch-ms-school.avif'
 
 const projects = [
   {

@@ -3,24 +3,21 @@ import devraLogo from '../assets/devraLogo.png'
 import Footer from '../components/Footer'
 import './CategoryPage.css'
 
-/**
- * Reusable category page layout.
- * Props:
- *   heroImg      — imported image for the hero background
- *   title        — e.g. "RESIDENTIAL"
- *   description  — one-liner under title
- *   projects     — array of { id, size, year, type, name, location }
- */
 export default function CategoryPage({ heroImg, title, description, projects }) {
   return (
     <div className="cat-page">
+      <Link to="/" className="cat-back">
+        &lt;- Back
+      </Link>
 
-      {/* Back */}
-      <Link to="/" className="cat-back">← Back</Link>
-
-      {/* Hero */}
       <section className="cat-hero">
-        <img src={heroImg} alt={title} className="cat-hero__img" />
+        <img
+          src={heroImg}
+          alt={title}
+          className="cat-hero__img"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="cat-hero__overlay" />
         <header className="cat-hero__nav">
           <Link to="/">
@@ -33,26 +30,32 @@ export default function CategoryPage({ heroImg, title, description, projects }) 
         </div>
       </section>
 
-      {/* Projects grid */}
       <section className="cat-projects">
         <div className="cat-projects__grid">
-          {projects.map((p) => {
-            const CardWrapper = p.to ? Link : 'div'
-            const wrapperProps = p.to ? { to: p.to } : {}
+          {projects.map((project) => {
+            const CardWrapper = project.to ? Link : 'div'
+            const wrapperProps = project.to ? { to: project.to } : {}
+
             return (
-              <CardWrapper key={p.id} className="cat-project-card" {...wrapperProps}>
+              <CardWrapper key={project.id} className="cat-project-card" {...wrapperProps}>
                 <div className="cat-project-card__img-wrap">
-                  <img src={p.img || heroImg} alt={p.name} className="cat-project-card__img" />
+                  <img
+                    src={project.img || heroImg}
+                    alt={project.name}
+                    className="cat-project-card__img"
+                    loading="lazy"
+                    decoding="async"
+                  />
                   <div className="cat-project-card__overlay" />
                 </div>
                 <div className="cat-project-card__body">
                   <div className="cat-project-card__meta">
-                    {p.size && <span>{p.size}</span>}
-                    {p.year && <span>{p.year}</span>}
-                    {p.type && <span className="cat-project-card__type">{p.type}</span>}
+                    {project.size && <span>{project.size}</span>}
+                    {project.year && <span>{project.year}</span>}
+                    {project.type && <span className="cat-project-card__type">{project.type}</span>}
                   </div>
-                  <h3 className="cat-project-card__name">{p.name}</h3>
-                  <p className="cat-project-card__location">{p.location}</p>
+                  <h3 className="cat-project-card__name">{project.name}</h3>
+                  <p className="cat-project-card__location">{project.location}</p>
                 </div>
               </CardWrapper>
             )
@@ -60,7 +63,6 @@ export default function CategoryPage({ heroImg, title, description, projects }) 
         </div>
       </section>
 
-      {/* CTA */}
       <section className="cat-cta">
         <div className="cat-cta__inner">
           <span className="cat-cta__dot" aria-hidden="true" />
@@ -69,7 +71,9 @@ export default function CategoryPage({ heroImg, title, description, projects }) 
             Whether you have a vision in mind or are just exploring, our team is here
             to bring beauty, purpose, and elegance to your space.
           </p>
-          <Link to="/contact" className="cat-cta__btn">Let's talk ↗</Link>
+          <Link to="/contact" className="cat-cta__btn">
+            Let's talk -&gt;
+          </Link>
         </div>
       </section>
 

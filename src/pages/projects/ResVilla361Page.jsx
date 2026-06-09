@@ -1,13 +1,13 @@
 import ProjectDetailPage from '../ProjectDetailPage'
-import img1 from '../../assets/projects/res-villa-361.jpg'
-import img2 from '../../assets/projects/res-villa-361-2.jpg'
-import img3 from '../../assets/projects/res-villa-361-3.jpg'
-import img4 from '../../assets/projects/res-villa-361-4.jpg'
-import img5 from '../../assets/projects/res-villa-361-5.jpg'
-import img6 from '../../assets/projects/res-villa-361-6.jpg'
-import img7 from '../../assets/projects/res-villa-361-7.jpg'
-import img8 from '../../assets/projects/res-villa-361-8.jpg'
-import img9 from '../../assets/projects/res-villa-361-9.jpg'
+import img1 from '../../assets/projects/res-villa-361.avif'
+import img2 from '../../assets/projects/res-villa-361-2.avif'
+import img3 from '../../assets/projects/res-villa-361-3.avif'
+import img4 from '../../assets/projects/res-villa-361-4.avif'
+import img5 from '../../assets/projects/res-villa-361-5.avif'
+import img6 from '../../assets/projects/res-villa-361-6.avif'
+import img7 from '../../assets/projects/res-villa-361-7.avif'
+import img8 from '../../assets/projects/res-villa-361-8.avif'
+import img9 from '../../assets/projects/res-villa-361-9.avif'
 
 export default function ResVilla361Page() {
   return (

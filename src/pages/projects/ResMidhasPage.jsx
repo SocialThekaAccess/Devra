@@ -1,7 +1,7 @@
 import ProjectDetailPage from '../ProjectDetailPage'
-import img1 from '../../assets/projects/res-midhas.jpg'
-import img2 from '../../assets/projects/res-midhas-2.jpg'
-import img3 from '../../assets/projects/res-midhas-3.jpg'
+import img1 from '../../assets/projects/res-midhas.avif'
+import img2 from '../../assets/projects/res-midhas-2.avif'
+import img3 from '../../assets/projects/res-midhas-3.avif'
 
 export default function ResMidhasPage() {
   return (

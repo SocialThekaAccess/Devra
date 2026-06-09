@@ -10,11 +10,11 @@ import farmhouseImg from '../assets/farmHouse.avif'
 
 const collectionItems = [
   { id: 1, label: 'RESIDENTIAL', src: residentialImg, fallback: '#c8b89a', to: '/residential' },
-  { id: 2, label: 'HOUSINGS',    src: housingsImg,    fallback: '#9aab9a', to: '/housing' },
-  { id: 3, label: 'COMMERCIAL',  src: commercialImg,  fallback: '#d4cfc8', to: '/commercial' },
-  { id: 4, label: 'SCHOOLS',     src: schoolsImg,     fallback: '#b8c4c8', to: '/schools' },
+  { id: 2, label: 'HOUSINGS', src: housingsImg, fallback: '#9aab9a', to: '/housing' },
+  { id: 3, label: 'COMMERCIAL', src: commercialImg, fallback: '#d4cfc8', to: '/commercial' },
+  { id: 4, label: 'SCHOOLS', src: schoolsImg, fallback: '#b8c4c8', to: '/schools' },
   { id: 5, label: 'HOSPITALITY', src: hospitalityImg, fallback: '#8a7a6a', to: '/hospitality' },
-  { id: 6, label: 'FARM HOUSE',  src: farmhouseImg,   fallback: '#a89878', to: '/farm-houses' },
+  { id: 6, label: 'FARM HOUSE', src: farmhouseImg, fallback: '#a89878', to: '/farm-houses' },
 ]
 
 const serviceCards = [
@@ -51,10 +51,7 @@ const serviceCards = [
 function CollectionCard({ item }) {
   return (
     <Link to={item.to} className="col-card">
-      <div
-        className="col-card__img-wrap"
-        style={{ background: item.fallback }}
-      >
+      <div className="col-card__img-wrap" style={{ background: item.fallback }}>
         <img
           src={item.src}
           alt={item.label}
@@ -74,10 +71,7 @@ function ServiceCard({ card }) {
 
   return (
     <div className="svc-card">
-      <div
-        className="svc-card__img-wrap"
-        style={{ background: card.fallback }}
-      >
+      <div className="svc-card__img-wrap" style={{ background: card.fallback }}>
         <img
           src={card.src}
           alt={titleLines.join(' ')}
@@ -88,8 +82,11 @@ function ServiceCard({ card }) {
       </div>
       <div className="svc-card__body">
         <h3 className="svc-card__title">
-          {titleLines.map((line, i) => (
-            <span key={i}>{line}{i < titleLines.length - 1 && <br />}</span>
+          {titleLines.map((line, index) => (
+            <span key={line}>
+              {line}
+              {index < titleLines.length - 1 && <br />}
+            </span>
           ))}
         </h3>
         <p className="svc-card__desc">{card.desc}</p>
@@ -101,17 +98,14 @@ function ServiceCard({ card }) {
 export default function Collection() {
   return (
     <section className="collection-section" id="services">
-      {/* ── Section heading ── */}
       <h2 className="collection-section__heading">The Devra Collection</h2>
 
-      {/* ── 3×2 image grid ── */}
       <div className="col-grid">
         {collectionItems.map((item) => (
           <CollectionCard key={item.id} item={item} />
         ))}
       </div>
 
-      {/* ── Core services band ── */}
       <div className="services-block">
         <span className="services-block__pill">Our Core Architectural Services</span>
 
@@ -120,15 +114,14 @@ export default function Collection() {
         </h2>
 
         <p className="services-block__body">
-          We are Devra Architects, a New Chandigarh—based architecture studio with 475+ completed
+          We are Devra Architects, a New Chandigarh-based architecture studio with 475+ completed
           projects across residential, commercial, institutional, and hospitality sectors. We deliver
-          complete architectural solutions — from concept to execution — driven by proportion, light,
+          complete architectural solutions from concept to execution, driven by proportion, light,
           material honesty, and buildability. Our work spans contemporary, tropical modern, classical,
           and multidisciplinary architecture across Chandigarh, Mohali, Punjab, and beyond.
         </p>
       </div>
 
-      {/* ── 2×2 service cards ── */}
       <div className="svc-grid">
         {serviceCards.map((card) => (
           <ServiceCard key={card.id} card={card} />

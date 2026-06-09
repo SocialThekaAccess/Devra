@@ -12,15 +12,21 @@
   --color-white: #ffffff;
   --color-dark: #0a0a0a;
   --color-overlay: rgba(0, 0, 0, 0.35);
+  --color-parchment: #ece8e1;
+  --color-purple: #4a1a6b;
+  --color-purple-soft: #6b2fa0;
   --transition-slow: 1.2s ease;
   --transition-med: 0.4s ease;
-
-  /* ── Type scale ── */
-  --fs-h1: 82px;
-  --fs-h2: 64px;
-  --fs-h3: 60px;
-  --fs-h4: 38px;
-  --fs-p:  22px;
+  --content-max: 1080px;
+  --content-wide: 1200px;
+  --page-gutter: clamp(20px, 4vw, 72px);
+  --section-space: clamp(56px, 8vw, 96px);
+  --section-space-sm: clamp(36px, 5vw, 72px);
+  --fs-h1: clamp(46px, 7vw, 82px);
+  --fs-h2: clamp(34px, 5vw, 64px);
+  --fs-h3: clamp(30px, 4vw, 52px);
+  --fs-h4: clamp(26px, 3vw, 38px);
+  --fs-p: clamp(16px, 2vw, 22px);
 }
 
 html, body {
@@ -32,12 +38,14 @@ html, body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
 }
 
 body {
   font-family: var(--font-sans);
-  background: #ece8e1;
+  background: var(--color-parchment);
   color: var(--color-dark);
+  text-rendering: optimizeLegibility;
 }
 
 #root {
@@ -52,9 +60,32 @@ a {
   color: inherit;
 }
 
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
 button {
   cursor: pointer;
-  font-family: inherit;
   border: none;
   background: none;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,7 +1,7 @@
 import ProjectDetailPage from '../ProjectDetailPage'
-import img1 from '../../assets/projects/sch-ms-school-a.png'
-import img2 from '../../assets/projects/sch-ms-school-b.png'
-import img3 from '../../assets/projects/sch-ms-school-c.png'
+import img1 from '../../assets/projects/sch-ms-school-a.avif'
+import img2 from '../../assets/projects/sch-ms-school-b.avif'
+import img3 from '../../assets/projects/sch-ms-school-c.avif'
 
 export default function SchMsSchoolPage() {
   return (

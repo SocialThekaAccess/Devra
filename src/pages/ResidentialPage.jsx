@@ -1,13 +1,13 @@
 import CategoryPage from './CategoryPage'
 import heroImg       from '../assets/residential.avif'
-import img121        from '../assets/projects/res-121-122.jpg'
-import imgVilla361   from '../assets/projects/res-villa-361.jpg'
+import img121        from '../assets/projects/res-121-122.avif'
+import imgVilla361   from '../assets/projects/res-villa-361.avif'
 import imgVilla58    from '../assets/projects/res-villa-58.jpg'
 import imgVilla303   from '../assets/projects/res-villa-303.jpg'
 import imgVilla201d  from '../assets/projects/res-villa-201d.jpg'
-import imgKangs      from '../assets/projects/res-kangs.jpg'
+import imgKangs      from '../assets/projects/res-kangs.avif'
 import imgSupreet    from '../assets/projects/res-supreet.jpg'
-import imgMidhas     from '../assets/projects/res-midhas.jpg'
+import imgMidhas     from '../assets/projects/res-midhas.avif'
 import imgMinzs      from '../assets/projects/res-minzs.jpg'
 
 const projects = [

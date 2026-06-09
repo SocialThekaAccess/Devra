@@ -1,6 +1,6 @@
 import CategoryPage from './CategoryPage'
 import heroImg from '../assets/hospitality.avif'
-import imgCg1 from '../assets/projects/hos-castle-grey.jpg'
+import imgCg1 from '../assets/projects/hos-castle-grey.avif'
 
 const projects = [
   {

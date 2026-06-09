@@ -1,26 +1,20 @@
-/* ═══════════════════════════════════════════════════════════════
-   Shared background — same parchment as collection section
-═══════════════════════════════════════════════════════════════ */
 .transform-section,
 .who-section {
-  background: #ece8e1;
+  background: var(--color-parchment);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   Part 1 — Room Transformation  (two-column layout)
-═══════════════════════════════════════════════════════════════ */
 .transform-section {
   display: flex;
   align-items: center;
-  gap: 64px;
-  padding: 72px 72px 80px;
-  max-width: 1200px;
+  gap: clamp(32px, 6vw, 64px);
+  padding: var(--section-space-sm) var(--page-gutter);
+  max-width: var(--content-wide);
   margin: 0 auto;
   width: 100%;
-  box-sizing: border-box;
+  content-visibility: auto;
+  contain-intrinsic-size: 700px;
 }
 
-/* ── Left column ──────────────────────────────────────────────── */
 .transform-section__left {
   flex: 0 0 340px;
   display: flex;
@@ -28,63 +22,56 @@
   gap: 16px;
 }
 
-.transform-section__pill {
+.transform-section__pill,
+.who-section__pill {
   display: inline-block;
   align-self: flex-start;
-  background: #6b2fa0;
+  background: var(--color-purple-soft);
   color: #fff;
-  font-family: var(--font-sans);
   font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   padding: 7px 18px;
   border-radius: 100px;
 }
 
-.transform-section__heading {
+.transform-section__heading,
+.who-section__heading {
   font-family: var(--font-serif);
   font-size: var(--fs-h2);
   font-weight: 400;
   color: #1a1a1a;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-.transform-section__sub {
-  font-family: var(--font-sans);
+.transform-section__sub,
+.who-section__sub {
   font-size: var(--fs-p);
   font-weight: 300;
   color: #5a5a5a;
-  margin: 0;
+  line-height: 1.7;
 }
 
 .transform-section__tags {
   list-style: none;
-  padding: 0;
-  margin: 8px 0 0;
+  margin-top: 8px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
 .transform-section__tags li {
-  font-family: var(--font-sans);
-  font-size: var(--fs-p);
+  font-size: clamp(15px, 2vw, 20px);
   font-weight: 300;
   color: #4a4a4a;
-  letter-spacing: 0.01em;
 }
 
-/* ── Right column ─────────────────────────────────────────────── */
 .transform-section__right {
   flex: 1;
   min-width: 0;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   Before / After Slider
-═══════════════════════════════════════════════════════════════ */
 .ba-slider {
   position: relative;
   width: 100%;
@@ -93,90 +80,79 @@
   overflow: hidden;
   cursor: col-resize;
   user-select: none;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  touch-action: none;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
   background: #ccc;
+  outline: none;
 }
 
-/* Both images fill the full slider area */
-.ba-slider__img--after {
+.ba-slider:focus-visible {
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.12),
+    0 0 0 3px rgba(107, 47, 160, 0.28);
+}
+
+.ba-slider__img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   pointer-events: none;
 }
 
-/* Before image wrapper — clipped on the right via inline width */
 .ba-slider__before-wrap {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0 auto 0 0;
   height: 100%;
   overflow: hidden;
-  /* width is set via inline style from JS */
 }
 
-/* Before image: absolute, top-left anchored, height=100%,
-   width is set via JS ref to match the full slider width */
 .ba-slider__img--before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  pointer-events: none;
+  min-width: 100%;
 }
 
-/* ── Divider line ─────────────────────────────────────────────── */
 .ba-slider__divider {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 2px;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.95);
   transform: translateX(-50%);
   pointer-events: none;
   z-index: 2;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04);
 }
 
-/* ── Drag handle ──────────────────────────────────────────────── */
 .ba-slider__handle {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.92);
-  border: none;
+  background: rgba(255, 255, 255, 0.96);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: col-resize;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   color: #333;
-  transition: background 0.2s;
+  pointer-events: none;
 }
 
-.ba-slider__handle:hover {
-  background: #fff;
-}
-
-/* ── Before / After labels ────────────────────────────────────── */
 .ba-slider__label {
   position: absolute;
   bottom: 16px;
-  font-family: var(--font-sans);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.04em;
   color: #fff;
-  background: rgba(90, 40, 140, 0.85);
-  padding: 5px 14px;
+  background: rgba(90, 40, 140, 0.9);
+  padding: 6px 14px;
   border-radius: 100px;
   z-index: 3;
   pointer-events: none;
@@ -190,48 +166,27 @@
   right: 16px;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   Part 2 — Who Are We
-═══════════════════════════════════════════════════════════════ */
 .who-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 80px 24px 96px;
+  padding: var(--section-space-sm) var(--page-gutter) var(--section-space);
   gap: 20px;
+  content-visibility: auto;
+  contain-intrinsic-size: 420px;
 }
 
 .who-section__pill {
-  display: inline-block;
-  background: #6b2fa0;
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  padding: 7px 20px;
-  border-radius: 100px;
+  align-self: center;
 }
 
 .who-section__heading {
-  font-family: var(--font-serif);
-  font-size: var(--fs-h1);
-  font-weight: 400;
-  color: #1a1a1a;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  margin: 0;
   max-width: 780px;
 }
 
 .who-section__sub {
-  font-family: var(--font-sans);
-  font-size: var(--fs-p);
-  font-weight: 300;
-  color: #5a5a5a;
-  line-height: 1.7;
-  margin: 0;
+  max-width: 42rem;
 }
 
 .who-section__btn {
@@ -239,32 +194,29 @@
   align-items: center;
   gap: 6px;
   margin-top: 8px;
+  min-height: 48px;
   padding: 14px 32px;
   border-radius: 100px;
   background: #fff;
-  border: 1.5px solid rgba(0,0,0,0.12);
-  font-family: var(--font-sans);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.1em;
   color: #1a1a1a;
-  text-decoration: none;
   transition: box-shadow 0.25s, border-color 0.25s;
 }
 
-.who-section__btn:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  border-color: rgba(0,0,0,0.25);
+@media (hover: hover) and (pointer: fine) {
+  .who-section__btn:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.25);
+  }
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   Responsive
-═══════════════════════════════════════════════════════════════ */
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .transform-section {
     flex-direction: column;
-    padding: 56px 24px 64px;
-    gap: 40px;
+    align-items: stretch;
   }
 
   .transform-section__left {
@@ -276,10 +228,11 @@
 @media (max-width: 560px) {
   .ba-slider {
     aspect-ratio: 4 / 3;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
-  .who-section {
-    padding: 64px 20px 72px;
+  .ba-slider__handle {
+    width: 44px;
+    height: 44px;
   }
 }
