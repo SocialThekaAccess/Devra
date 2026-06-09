@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from '../router'
-import devraLogo from '../assets/devraLogo.png'
+import Header from '../components/Header'
 import recognitionImg from '../assets/residential.avif'
 import Footer from '../components/Footer'
 import './ContactPage.css'
@@ -59,11 +59,7 @@ export default function ContactPage() {
         &lt;- Back
       </Link>
 
-      <header className="contact-logo-wrap">
-        <Link to="/">
-          <img src={devraLogo} alt="Devra" className="contact-logo" />
-        </Link>
-      </header>
+      <Header variant="static" />
 
       <main className="contact-main">
         <div className="contact-heading-wrap">

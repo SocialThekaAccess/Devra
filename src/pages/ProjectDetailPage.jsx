@@ -1,5 +1,5 @@
 import { Link } from '../router'
-import devraLogo from '../assets/devraLogo.png'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 import './ProjectDetailPage.css'
 
@@ -64,11 +64,7 @@ export default function ProjectDetailPage({
           decoding="async"
         />
         <div className="proj-hero__overlay" />
-        <header className="proj-hero__nav">
-          <Link to="/">
-            <img src={devraLogo} alt="Devra" className="proj-hero__logo" />
-          </Link>
-        </header>
+        <Header variant="overlay" />
         <div className="proj-hero__title-wrap">
           <h1 className="proj-hero__title">{title}</h1>
           <span className="proj-hero__category">{category}</span>

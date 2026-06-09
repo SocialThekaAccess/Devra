@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { Link } from '../router'
-import Navbar from './Navbar'
+import Header from './Header'
 import './HeroSlider.css'
 
 const defaultSlides = [
@@ -80,7 +79,7 @@ export default function HeroSlider({
 
   return (
     <section className="hero" aria-label="Hero slideshow">
-      <Navbar />
+      <Header variant="overlay" />
 
       <div className="hero__slides" ref={slidesRef}>
         {slides.map((slide, index) => (
@@ -116,14 +115,6 @@ export default function HeroSlider({
           <p className="hero__subheading">
             Luxury Architecture That Defines Modern Living
           </p>
-          <div className="hero__actions">
-            <Link to="/about-us" className="hero__btn">
-              About us <span className="hero__btn-arrow">-&gt;</span>
-            </Link>
-            <Link to="/contact" className="hero__btn">
-              Contact us <span className="hero__btn-arrow">-&gt;</span>
-            </Link>
-          </div>
         </div>
       )}
 

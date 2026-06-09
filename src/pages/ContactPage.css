@@ -23,20 +23,6 @@
   backdrop-filter: blur(8px);
 }
 
-.contact-logo-wrap {
-  display: flex;
-  justify-content: center;
-  padding: max(24px, env(safe-area-inset-top)) 24px 0;
-}
-
-.contact-logo {
-  width: clamp(112px, 11vw, 150px);
-  height: auto;
-  margin-top: clamp(-36px, -3vw, -20px);
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-
 .contact-main {
   flex: 1;
   display: flex;

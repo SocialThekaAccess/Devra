@@ -1,5 +1,5 @@
 import { Link } from '../router'
-import devraLogo from '../assets/devraLogo.png'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 import './CategoryPage.css'
 
@@ -19,11 +19,7 @@ export default function CategoryPage({ heroImg, title, description, projects }) 
           decoding="async"
         />
         <div className="cat-hero__overlay" />
-        <header className="cat-hero__nav">
-          <Link to="/">
-            <img src={devraLogo} alt="Devra" className="cat-hero__logo" />
-          </Link>
-        </header>
+        <Header variant="overlay" />
         <div className="cat-hero__content">
           <h1 className="cat-hero__title">{title}</h1>
           <p className="cat-hero__desc">{description}</p>

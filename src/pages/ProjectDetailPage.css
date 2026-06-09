@@ -51,28 +51,6 @@
   );
 }
 
-.proj-hero__nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  padding: max(16px, env(safe-area-inset-top)) var(--page-gutter) 0;
-  z-index: 2;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, transparent 100%);
-  pointer-events: none;
-}
-
-.proj-hero__logo {
-  width: clamp(112px, 11vw, 150px);
-  height: auto;
-  margin-top: clamp(-36px, -3vw, -20px);
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-  pointer-events: auto;
-}
-
 .proj-hero__title-wrap {
   position: relative;
   z-index: 2;

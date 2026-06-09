@@ -48,8 +48,11 @@ export function navigate(to) {
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
 
-export function Link({ to, children, className, style }) {
+export function Link({ to, children, className, style, onClick, ...rest }) {
   const handleClick = (event) => {
+    onClick?.(event)
+    if (event.defaultPrevented) return
+
     if (to.startsWith('http') || to.startsWith('mailto:') || to.startsWith('tel:')) return
 
     event.preventDefault()
@@ -57,7 +60,7 @@ export function Link({ to, children, className, style }) {
   }
 
   return (
-    <a href={to} className={className} style={style} onClick={handleClick}>
+    <a href={to} className={className} style={style} onClick={handleClick} {...rest}>
       {children}
     </a>
   )
