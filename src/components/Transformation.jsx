@@ -16,6 +16,7 @@ const tags = [
 function BeforeAfterSlider() {
   const [position, setPosition] = useState(50)
   const dragging = useRef(false)
+  const sliderRef = useRef(null)
 
   const updatePosition = (clientX, element) => {
     const rect = element.getBoundingClientRect()
@@ -53,6 +54,7 @@ function BeforeAfterSlider() {
 
   return (
     <div
+      ref={sliderRef}
       className="ba-slider"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
@@ -67,6 +69,7 @@ function BeforeAfterSlider() {
       tabIndex={0}
       onKeyDown={handleKeyDown}
     >
+      {/* After image — full width baseline */}
       <img
         src={afterImg}
         alt="After transformation"
@@ -75,15 +78,19 @@ function BeforeAfterSlider() {
         decoding="async"
       />
 
-      <div className="ba-slider__before-wrap" style={{ width: `${position}%` }}>
-        <img
-          src={beforeImg}
-          alt="Before transformation"
-          className="ba-slider__img ba-slider__img--before"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+      {/*
+        Before image — always full size, clipped by clip-path so
+        only the left `position`% is visible. No wrapper needed,
+        no zoom, no shift.
+      */}
+      <img
+        src={beforeImg}
+        alt="Before transformation"
+        className="ba-slider__img ba-slider__img--before"
+        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+        loading="lazy"
+        decoding="async"
+      />
 
       <div className="ba-slider__divider" style={{ left: `${position}%` }} />
 

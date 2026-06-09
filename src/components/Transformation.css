@@ -103,15 +103,8 @@
   pointer-events: none;
 }
 
-.ba-slider__before-wrap {
-  position: absolute;
-  inset: 0 auto 0 0;
-  height: 100%;
-  overflow: hidden;
-}
-
 .ba-slider__img--before {
-  min-width: 100%;
+  z-index: 1;
 }
 
 .ba-slider__divider {
