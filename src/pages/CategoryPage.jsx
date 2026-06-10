@@ -6,10 +6,6 @@ import './CategoryPage.css'
 export default function CategoryPage({ heroImg, title, description, projects }) {
   return (
     <div className="cat-page">
-      <Link to="/" className="cat-back">
-        &lt;- Back
-      </Link>
-
       <section className="cat-hero">
         <img
           src={heroImg}

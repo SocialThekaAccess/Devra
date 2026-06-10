@@ -55,10 +55,6 @@ export default function ContactPage() {
 
   return (
     <div className="contact-page">
-      <Link to="/" className="contact-back">
-        &lt;- Back
-      </Link>
-
       <Header variant="static" />
 
       <main className="contact-main">

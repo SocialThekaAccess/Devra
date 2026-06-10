@@ -5,23 +5,6 @@
   flex-direction: column;
 }
 
-.about-back-btn {
-  position: fixed;
-  top: max(18px, env(safe-area-inset-top));
-  left: var(--page-gutter);
-  z-index: 200;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.04em;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 9px 18px;
-  border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
 .about-values {
   background: #fff;
   content-visibility: auto;

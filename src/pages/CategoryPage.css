@@ -5,22 +5,6 @@
   flex-direction: column;
 }
 
-.cat-back {
-  position: fixed;
-  top: max(18px, env(safe-area-inset-top));
-  left: var(--page-gutter);
-  z-index: 200;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.06em;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 9px 16px;
-  border-radius: 100px;
-  backdrop-filter: blur(8px);
-}
-
 .cat-hero {
   position: relative;
   min-height: max(560px, 84svh);

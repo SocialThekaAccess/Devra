@@ -52,10 +52,6 @@ export default function AboutPage() {
     <div className="about-page">
       <HeroSlider hideContent />
 
-      <Link to="/" className="about-back-btn">
-        &lt;- Back to Home
-      </Link>
-
       <section className="about-values">
         {values.map((value, index) => (
           <div

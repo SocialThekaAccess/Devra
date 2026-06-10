@@ -4,7 +4,6 @@ import devraLogo from '../assets/devraLogo.png'
 import './Header.css'
 
 const serviceLinks = [
-  { to: '/#services', label: 'All services', note: 'See the complete design spectrum' },
   { to: '/residential', label: 'Residential', note: 'Private homes and villas' },
   { to: '/housing', label: 'Housing', note: 'Community and multi-unit living' },
   { to: '/commercial', label: 'Commercial', note: 'Retail, office and mixed-use' },
@@ -23,18 +22,45 @@ export default function Header({ variant = 'overlay' }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const dropdownRef = useRef(null)
+  const closeTimerRef = useRef(null)
+
+  const clearCloseTimer = () => {
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current)
+      closeTimerRef.current = null
+    }
+  }
+
+  const openServicesMenu = () => {
+    clearCloseTimer()
+    setServicesOpen(true)
+  }
+
+  const closeServicesMenu = ({ immediate = false } = {}) => {
+    clearCloseTimer()
+
+    if (immediate) {
+      setServicesOpen(false)
+      return
+    }
+
+    closeTimerRef.current = window.setTimeout(() => {
+      setServicesOpen(false)
+      closeTimerRef.current = null
+    }, 180)
+  }
 
   useEffect(() => {
     if (!servicesOpen) return undefined
 
     const handlePointerDown = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setServicesOpen(false)
+        closeServicesMenu({ immediate: true })
       }
     }
 
     const handleEscape = (event) => {
-      if (event.key === 'Escape') setServicesOpen(false)
+      if (event.key === 'Escape') closeServicesMenu({ immediate: true })
     }
 
     document.addEventListener('mousedown', handlePointerDown)
@@ -45,6 +71,8 @@ export default function Header({ variant = 'overlay' }) {
       document.removeEventListener('keydown', handleEscape)
     }
   }, [servicesOpen])
+
+  useEffect(() => () => clearCloseTimer(), [])
 
   return (
     <header className={`site-header site-header--${variant}`}>
@@ -67,7 +95,7 @@ export default function Header({ variant = 'overlay' }) {
             aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             onClick={() => {
               setMenuOpen((open) => !open)
-              setServicesOpen(false)
+              closeServicesMenu({ immediate: true })
             }}
           >
             <span />
@@ -97,8 +125,8 @@ export default function Header({ variant = 'overlay' }) {
               <div
                 ref={dropdownRef}
                 className={`site-header__dropdown ${servicesOpen ? 'site-header__dropdown--open' : ''}`}
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
+                onMouseEnter={openServicesMenu}
+                onMouseLeave={() => closeServicesMenu()}
               >
                 <button
                   type="button"
@@ -106,7 +134,13 @@ export default function Header({ variant = 'overlay' }) {
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
                   aria-controls="site-header-services-menu"
-                  onClick={() => setServicesOpen((open) => !open)}
+                  onClick={() => {
+                    if (servicesOpen) {
+                      closeServicesMenu({ immediate: true })
+                    } else {
+                      openServicesMenu()
+                    }
+                  }}
                 >
                   Services
                   <span className="site-header__dropdown-caret" aria-hidden="true" />
@@ -130,7 +164,7 @@ export default function Header({ variant = 'overlay' }) {
                         className="site-header__dropdown-link"
                         onClick={() => {
                           setMenuOpen(false)
-                          setServicesOpen(false)
+                          closeServicesMenu({ immediate: true })
                         }}
                       >
                         <span className="site-header__dropdown-link-title">{link.label}</span>
