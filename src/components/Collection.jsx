@@ -109,14 +109,11 @@ export default function Collection() {
       <div className="services-block">
         <span className="services-block__pill">Our Core Architectural Services</span>
 
-        {/*
-          SEO: only "Best Architects in Chandigarh" carries h1 weight.
-          Visually the full line renders identically.
-          "Crafted by the" and "& Beyond" are presentational spans.
-        */}
-        <h1 className="services-block__heading">
-          <span className="services-block__heading-pre">Crafted by the </span>Best Architects in Chandigarh<span className="services-block__heading-post"> &amp; Beyond</span>
-        </h1>
+        <div className="services-block__heading-wrap">
+          <span className="services-block__heading" aria-hidden="true">Crafted by the&nbsp;</span>
+          <h1 className="services-block__heading">Best Architects in Chandigarh</h1>
+          <span className="services-block__heading" aria-hidden="true">&nbsp;&amp; Beyond</span>
+        </div>
 
         <p className="services-block__body">
           We are Devra Architects, a New Chandigarh-based architecture studio with 475+ completed

@@ -88,6 +88,13 @@
   border-radius: 100px;
 }
 
+.services-block__heading-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+}
+
 .services-block__heading {
   font-family: var(--font-serif);
   font-size: var(--fs-h2);
@@ -95,12 +102,10 @@
   color: #1a1a1a;
   line-height: 1.12;
   letter-spacing: -0.01em;
-}
-
-/* "Crafted by the" and "& Beyond" are decorative — same visual style, not the SEO keyword */
-.services-block__heading-pre,
-.services-block__heading-post {
-  font-weight: 300;
+  /* Reset h1 block behaviour so it flows inline with sibling spans */
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 .services-block__body {
