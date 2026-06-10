@@ -1,4 +1,5 @@
 import { lazy } from 'react'
+import { homeSectionPaths } from './routeConfig.js'
 
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
@@ -32,31 +33,31 @@ const ResMinzsPage = lazy(() => import('./pages/projects/ResMinzsPage'))
 export const routes = {
   '/about-us': AboutPage,
   '/contact': ContactPage,
-  '/residential': ResidentialPage,
-  '/housing': HousingsPage,
-  '/housing/sansarg': HouSansargPage,
-  '/housing/panchkula-housing': HouPanchkulaPage,
-  '/commercial': CommercialPage,
-  '/commercial/devra-architects': ComDevraArchPage,
-  '/commercial/fortofino': ComFortofinoPage,
-  '/commercial/milk-point': ComMilkPointPage,
-  '/schools': SchoolsPage,
-  '/schools/m-s-school': SchMsSchoolPage,
-  '/schools/j-p-international': SchJpInternationalPage,
-  '/hospitality': HospitalityPage,
-  '/hospitality/castle-grey': HosCastleGreyPage,
-  '/farm-houses': FarmHousePage,
-  '/farm-houses/gill-s-farmhouse': FhGillsFarmhousePage,
-  '/farm-houses/nagra-farmhouse': FhNagraFarmhousePage,
-  '/residential/121-122': Res121122Page,
-  '/residential/villa-361': ResVilla361Page,
-  '/residential/villa-58': ResVilla58Page,
-  '/residential/villa-303': ResVilla303Page,
-  '/residential/villa-201d': ResVilla201DPage,
-  '/residential/the-kangs': ResKangsPage,
-  '/residential/col-supreet': ResSupreetPage,
-  '/residential/the-midhas': ResMidhasPage,
-  '/residential/the-minzs': ResMinzsPage,
+  '/services/residential': ResidentialPage,
+  '/services/housing': HousingsPage,
+  '/services/housing/sansarg': HouSansargPage,
+  '/services/housing/panchkula-housing': HouPanchkulaPage,
+  '/services/commercial': CommercialPage,
+  '/services/commercial/devra-architects': ComDevraArchPage,
+  '/services/commercial/fortofino': ComFortofinoPage,
+  '/services/commercial/milk-point': ComMilkPointPage,
+  '/services/schools': SchoolsPage,
+  '/services/schools/m-s-school': SchMsSchoolPage,
+  '/services/schools/j-p-international': SchJpInternationalPage,
+  '/services/hospitality': HospitalityPage,
+  '/services/hospitality/castle-grey': HosCastleGreyPage,
+  '/services/farm-houses': FarmHousePage,
+  '/services/farm-houses/gill-s-farmhouse': FhGillsFarmhousePage,
+  '/services/farm-houses/nagra-farmhouse': FhNagraFarmhousePage,
+  '/services/residential/121-122': Res121122Page,
+  '/services/residential/villa-361': ResVilla361Page,
+  '/services/residential/villa-58': ResVilla58Page,
+  '/services/residential/villa-303': ResVilla303Page,
+  '/services/residential/villa-201d': ResVilla201DPage,
+  '/services/residential/the-kangs': ResKangsPage,
+  '/services/residential/col-supreet': ResSupreetPage,
+  '/services/residential/the-midhas': ResMidhasPage,
+  '/services/residential/the-minzs': ResMinzsPage,
 }
 
-export const routePaths = Object.keys(routes)
+export const routePaths = [...homeSectionPaths, ...Object.keys(routes)]

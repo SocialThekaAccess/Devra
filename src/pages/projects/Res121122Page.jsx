@@ -6,7 +6,7 @@ import img3 from '../../assets/projects/res-121-122-3.avif'
 export default function Res121122Page() {
   return (
     <ProjectDetailPage
-      backTo="/residential"
+      backTo="/services/residential"
       backLabel="Residential"
       title="121 & 122"
       location="PH-1 OMAXE, New Chandigarh"

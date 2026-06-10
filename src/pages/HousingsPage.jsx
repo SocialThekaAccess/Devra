@@ -13,7 +13,7 @@ const projects = [
     name: 'Sansarg',
     location: 'PH-1 Cassia, New Chandigarh',
     img: heroImg,
-    to: '/housing/sansarg',
+    to: '/services/housing/sansarg',
     overview: 'A dynamic housing development defined by sculpted terraces, patterned balconies, and warm material tones. The architecture is shaped to maximise openness - every residence enjoys extended outdoor decks, natural light, and wide community views.',
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     name: 'Panchkula Housing',
     location: 'Panchkula',
     img: panchkulaHousingImg,
-    to: '/housing/panchkula-housing',
+    to: '/services/housing/panchkula-housing',
     overview: 'A contemporary housing development defined by clean geometry, functional planning, and an articulated facade. Cantilevered balconies, framed edges, and vertical breaks give the towers a distinct identity while ensuring ample light, ventilation, and sweeping views.',
   },
 ]

@@ -6,7 +6,7 @@ import img3 from '../../assets/projects/sch-jp-3.avif'
 export default function SchJpInternationalPage() {
   return (
     <ProjectDetailPage
-      backTo="/schools"
+      backTo="/services/schools"
       backLabel="Schools"
       title="J P International"
       location="Rohtak, Haryana"

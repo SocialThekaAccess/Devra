@@ -12,7 +12,7 @@ import img9 from '../../assets/projects/hou-sansarg-9.avif'
 export default function HouSansargPage() {
   return (
     <ProjectDetailPage
-      backTo="/housing"
+      backTo="/services/housing"
       backLabel="Housing"
       title="Sansarg"
       location="PH-1 Cassia, New Chandigarh"

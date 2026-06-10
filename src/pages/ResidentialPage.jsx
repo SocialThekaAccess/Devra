@@ -11,15 +11,15 @@ import imgMidhas     from '../assets/projects/res-midhas.avif'
 import imgMinzs      from '../assets/projects/res-minzs.jpg'
 
 const projects = [
-  { id: 1, size: '300 + 300 SQYD', year: '2024', type: 'Home',  name: '121 & 122 PH-1 Omaxe',   location: 'New Chandigarh', img: img121,       to: '/residential/121-122' },
-  { id: 2, size: '500 SQYD',       year: '2021', type: 'House', name: 'Villa 361 PH-3 Cassia',   location: 'New Chandigarh', img: imgVilla361,  to: '/residential/villa-361' },
-  { id: 3, size: '300 SQYD',       year: '2025', type: 'House', name: 'Villa 58 PH-3 Cassia',    location: 'New Chandigarh', img: imgVilla58,   to: '/residential/villa-58' },
-  { id: 4, size: '500 SQYD',       year: '2023', type: 'House', name: 'Villa 303 PH-1 Cassia',   location: 'New Chandigarh', img: imgVilla303,  to: '/residential/villa-303' },
-  { id: 5, size: '300 SQYD',       year: '2025', type: 'House', name: 'Villa 201D PH-3 Cassia',  location: 'New Chandigarh', img: imgVilla201d, to: '/residential/villa-201d' },
-  { id: 6, size: '300 SQYD',       year: '2025', type: 'House', name: "The Kang's",              location: 'DLF, New Chandigarh', img: imgKangs,    to: '/residential/the-kangs' },
-  { id: 7, size: '300 SQYD',       year: '2025', type: 'House', name: 'Col. Supreet Ji',         location: 'Eco City, New Chandigarh', img: imgSupreet,  to: '/residential/col-supreet' },
-  { id: 8, size: '300 SQYD',       year: '2025', type: 'House', name: "The Midha's",             location: 'PH-3 Cassia, New Chandigarh', img: imgMidhas,   to: '/residential/the-midhas' },
-  { id: 9, size: '300 SQYD',       year: '2024', type: 'House', name: "The Minz's",              location: 'PH-3 Cassia, New Chandigarh', img: imgMinzs,    to: '/residential/the-minzs' },
+  { id: 1, size: '300 + 300 SQYD', year: '2024', type: 'Home',  name: '121 & 122 PH-1 Omaxe',   location: 'New Chandigarh', img: img121,       to: '/services/residential/121-122' },
+  { id: 2, size: '500 SQYD',       year: '2021', type: 'House', name: 'Villa 361 PH-3 Cassia',   location: 'New Chandigarh', img: imgVilla361,  to: '/services/residential/villa-361' },
+  { id: 3, size: '300 SQYD',       year: '2025', type: 'House', name: 'Villa 58 PH-3 Cassia',    location: 'New Chandigarh', img: imgVilla58,   to: '/services/residential/villa-58' },
+  { id: 4, size: '500 SQYD',       year: '2023', type: 'House', name: 'Villa 303 PH-1 Cassia',   location: 'New Chandigarh', img: imgVilla303,  to: '/services/residential/villa-303' },
+  { id: 5, size: '300 SQYD',       year: '2025', type: 'House', name: 'Villa 201D PH-3 Cassia',  location: 'New Chandigarh', img: imgVilla201d, to: '/services/residential/villa-201d' },
+  { id: 6, size: '300 SQYD',       year: '2025', type: 'House', name: "The Kang's",              location: 'DLF, New Chandigarh', img: imgKangs,    to: '/services/residential/the-kangs' },
+  { id: 7, size: '300 SQYD',       year: '2025', type: 'House', name: 'Col. Supreet Ji',         location: 'Eco City, New Chandigarh', img: imgSupreet,  to: '/services/residential/col-supreet' },
+  { id: 8, size: '300 SQYD',       year: '2025', type: 'House', name: "The Midha's",             location: 'PH-3 Cassia, New Chandigarh', img: imgMidhas,   to: '/services/residential/the-midhas' },
+  { id: 9, size: '300 SQYD',       year: '2024', type: 'House', name: "The Minz's",              location: 'PH-3 Cassia, New Chandigarh', img: imgMinzs,    to: '/services/residential/the-minzs' },
 ]
 
 export default function ResidentialPage() {

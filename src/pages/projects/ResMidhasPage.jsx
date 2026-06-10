@@ -6,7 +6,7 @@ import img3 from '../../assets/projects/res-midhas-3.avif'
 export default function ResMidhasPage() {
   return (
     <ProjectDetailPage
-      backTo="/residential"
+      backTo="/services/residential"
       backLabel="Residential"
       title="The Midha's"
       location="PH-3 Cassia, New Chandigarh"

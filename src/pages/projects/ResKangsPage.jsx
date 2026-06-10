@@ -6,7 +6,7 @@ import img3 from '../../assets/projects/res-kangs-3.avif'
 export default function ResKangsPage() {
   return (
     <ProjectDetailPage
-      backTo="/residential"
+      backTo="/services/residential"
       backLabel="Residential"
       title="The Kang's"
       location="DLF, New Chandigarh"

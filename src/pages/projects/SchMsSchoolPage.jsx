@@ -6,7 +6,7 @@ import img3 from '../../assets/projects/sch-ms-school-c.avif'
 export default function SchMsSchoolPage() {
   return (
     <ProjectDetailPage
-      backTo="/schools"
+      backTo="/services/schools"
       backLabel="Schools"
       title="M S School"
       location=""

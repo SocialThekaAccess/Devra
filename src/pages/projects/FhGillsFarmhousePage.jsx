@@ -11,7 +11,7 @@ import img8 from '../../assets/projects/fh-gills-8.avif'
 export default function FhGillsFarmhousePage() {
   return (
     <ProjectDetailPage
-      backTo="/farm-houses"
+      backTo="/services/farm-houses"
       backLabel="Farm Houses"
       title="Gill's Farmhouse"
       location="Baddi Road"

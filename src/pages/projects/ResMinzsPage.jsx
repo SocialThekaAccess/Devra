@@ -12,7 +12,7 @@ import img9 from '../../assets/projects/res-minzs-9.jpg'
 export default function ResMinzsPage() {
   return (
     <ProjectDetailPage
-      backTo="/residential"
+      backTo="/services/residential"
       backLabel="Residential"
       title="The Minz's"
       location="PH-3 Cassia, New Chandigarh"

@@ -12,7 +12,7 @@ import img9 from '../../assets/projects/res-villa-303-9.avif'
 export default function ResVilla303Page() {
   return (
     <ProjectDetailPage
-      backTo="/residential"
+      backTo="/services/residential"
       backLabel="Residential"
       title="Villa 303"
       location="PH-1 Cassia, New Chandigarh"

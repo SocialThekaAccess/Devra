@@ -12,7 +12,7 @@ import img9 from '../../assets/projects/com-fortofino-9.avif'
 export default function ComFortofinoPage() {
   return (
     <ProjectDetailPage
-      backTo="/commercial"
+      backTo="/services/commercial"
       backLabel="Commercial"
       title="FortoFino"
       location="Srinagar"

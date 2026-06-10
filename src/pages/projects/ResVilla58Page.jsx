@@ -11,7 +11,7 @@ import img8 from '../../assets/projects/res-villa-58-8.avif'
 export default function ResVilla58Page() {
   return (
     <ProjectDetailPage
-      backTo="/residential"
+      backTo="/services/residential"
       backLabel="Residential"
       title="Villa 58"
       location="PH-3 Cassia, New Chandigarh"

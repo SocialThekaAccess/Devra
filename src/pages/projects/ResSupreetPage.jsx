@@ -6,7 +6,7 @@ import img3 from '../../assets/projects/res-supreet-3.jpg'
 export default function ResSupreetPage() {
   return (
     <ProjectDetailPage
-      backTo="/residential"
+      backTo="/services/residential"
       backLabel="Residential"
       title="Col. Supreet Ji"
       location="Eco City, New Chandigarh"

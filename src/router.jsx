@@ -1,13 +1,14 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect, useState } from 'react'
+import { homeSectionRoutes } from './routeConfig'
 
-function scrollToHash(hash) {
-  if (!hash) {
+function scrollToSection(sectionId) {
+  if (!sectionId) {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
     return
   }
 
-  const target = document.getElementById(hash.slice(1))
+  const target = document.getElementById(sectionId)
   if (target) {
     target.scrollIntoView({ block: 'start', behavior: 'smooth' })
   } else {
@@ -16,11 +17,12 @@ function scrollToHash(hash) {
 }
 
 function syncScrollToLocation() {
-  const { hash } = window.location
+  const { hash, pathname } = window.location
+  const sectionId = hash ? hash.slice(1) : homeSectionRoutes[decodeURIComponent(pathname)] ?? null
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      scrollToHash(hash)
+      scrollToSection(sectionId)
     })
   })
 }
@@ -35,6 +37,8 @@ export function useRoute() {
     }
 
     window.addEventListener('popstate', onPop)
+    syncScrollToLocation()
+
     return () => window.removeEventListener('popstate', onPop)
   }, [])
 

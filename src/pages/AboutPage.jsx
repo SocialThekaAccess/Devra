@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider'
 import residentialImg from '../assets/residential.avif'
 import housingImg from '../assets/housing.avif'
 import Footer from '../components/Footer'
+import { heroSlides } from '../content/heroSlides'
 import './AboutPage.css'
 
 const values = [
@@ -50,7 +51,7 @@ const team = [
 export default function AboutPage() {
   return (
     <div className="about-page">
-      <HeroSlider hideContent />
+      <HeroSlider hideContent slides={heroSlides} />
 
       <section className="about-values">
         {values.map((value, index) => (

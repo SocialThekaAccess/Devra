@@ -12,7 +12,7 @@ import img9 from '../../assets/projects/hos-cg-9.avif'
 export default function HosCastleGreyPage() {
   return (
     <ProjectDetailPage
-      backTo="/hospitality"
+      backTo="/services/hospitality"
       backLabel="Hospitality"
       title="Castle Grey"
       location="Rohtak, Haryana"

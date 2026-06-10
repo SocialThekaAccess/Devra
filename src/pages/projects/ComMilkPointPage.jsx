@@ -5,7 +5,7 @@ import img2 from '../../assets/projects/com-milk-point-2.avif'
 export default function ComMilkPointPage() {
   return (
     <ProjectDetailPage
-      backTo="/commercial"
+      backTo="/services/commercial"
       backLabel="Commercial"
       title="Milk Point"
       location="Chandigarh"

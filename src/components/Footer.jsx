@@ -23,16 +23,16 @@ export default function Footer() {
             <h3 className="footer__nav-heading">Navigation</h3>
             <ul className="footer__nav-list">
               <li>
-                <Link to="/#services">Services&nbsp; -&gt;</Link>
+                <Link to="/services">Services&nbsp; -&gt;</Link>
               </li>
               <li>
-                <Link to="/#features">Features&nbsp; -&gt;</Link>
+                <Link to="/features">Features&nbsp; -&gt;</Link>
               </li>
               <li>
-                <Link to="/#vision">Vision&nbsp; -&gt;</Link>
+                <Link to="/vision">Vision&nbsp; -&gt;</Link>
               </li>
               <li>
-                <Link to="/#projects">Projects&nbsp; -&gt;</Link>
+                <Link to="/projects">Projects&nbsp; -&gt;</Link>
               </li>
             </ul>
           </div>

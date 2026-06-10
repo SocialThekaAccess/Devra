@@ -11,7 +11,7 @@ import img8 from '../../assets/projects/hou-panchkula-8.avif'
 export default function HouPanchkulaPage() {
   return (
     <ProjectDetailPage
-      backTo="/housing"
+      backTo="/services/housing"
       backLabel="Housing"
       title="Panchkula Housing"
       location="Panchkula"

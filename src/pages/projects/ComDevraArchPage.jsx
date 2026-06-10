@@ -12,7 +12,7 @@ import img9 from '../../assets/projects/com-devra-arch-9.jpg'
 export default function ComDevraArchPage() {
   return (
     <ProjectDetailPage
-      backTo="/commercial"
+      backTo="/services/commercial"
       backLabel="Commercial"
       title="Devra Architects"
       location="PH-1 Cassia, New Chandigarh"

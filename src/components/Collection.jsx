@@ -9,12 +9,12 @@ import hospitalityImg from '../assets/hospitality.avif'
 import farmhouseImg from '../assets/farmHouse.avif'
 
 const collectionItems = [
-  { id: 1, label: 'RESIDENTIAL', src: residentialImg, fallback: '#c8b89a', to: '/residential' },
-  { id: 2, label: 'HOUSINGS', src: housingsImg, fallback: '#9aab9a', to: '/housing' },
-  { id: 3, label: 'COMMERCIAL', src: commercialImg, fallback: '#d4cfc8', to: '/commercial' },
-  { id: 4, label: 'SCHOOLS', src: schoolsImg, fallback: '#b8c4c8', to: '/schools' },
-  { id: 5, label: 'HOSPITALITY', src: hospitalityImg, fallback: '#8a7a6a', to: '/hospitality' },
-  { id: 6, label: 'FARM HOUSE', src: farmhouseImg, fallback: '#a89878', to: '/farm-houses' },
+  { id: 1, label: 'RESIDENTIAL', src: residentialImg, fallback: '#c8b89a', to: '/services/residential' },
+  { id: 2, label: 'HOUSINGS', src: housingsImg, fallback: '#9aab9a', to: '/services/housing' },
+  { id: 3, label: 'COMMERCIAL', src: commercialImg, fallback: '#d4cfc8', to: '/services/commercial' },
+  { id: 4, label: 'SCHOOLS', src: schoolsImg, fallback: '#b8c4c8', to: '/services/schools' },
+  { id: 5, label: 'HOSPITALITY', src: hospitalityImg, fallback: '#8a7a6a', to: '/services/hospitality' },
+  { id: 6, label: 'FARM HOUSE', src: farmhouseImg, fallback: '#a89878', to: '/services/farm-houses' },
 ]
 
 const serviceCards = [

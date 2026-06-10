@@ -6,7 +6,7 @@ import img3 from '../../assets/projects/fh-nagra-3.avif'
 export default function FhNagraFarmhousePage() {
   return (
     <ProjectDetailPage
-      backTo="/farm-houses"
+      backTo="/services/farm-houses"
       backLabel="Farm Houses"
       title="Nagra Farmhouse"
       location="Chandigarh"

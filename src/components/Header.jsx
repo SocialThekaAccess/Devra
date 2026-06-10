@@ -4,17 +4,20 @@ import devraLogo from '../assets/devraLogo.png'
 import './Header.css'
 
 const serviceLinks = [
-  { to: '/residential', label: 'Residential', note: 'Private homes and villas' },
-  { to: '/housing', label: 'Housing', note: 'Community and multi-unit living' },
-  { to: '/commercial', label: 'Commercial', note: 'Retail, office and mixed-use' },
-  { to: '/schools', label: 'Schools', note: 'Educational and institutional spaces' },
-  { to: '/hospitality', label: 'Hospitality', note: 'Hotels and guest experiences' },
-  { to: '/farm-houses', label: 'Farm houses', note: 'Retreats shaped around nature' },
+  { to: '/services/residential', label: 'Residential', note: 'Private homes and villas' },
+  { to: '/services/housing', label: 'Housing', note: 'Community and multi-unit living' },
+  { to: '/services/commercial', label: 'Commercial', note: 'Retail, office and mixed-use' },
+  { to: '/services/schools', label: 'Schools', note: 'Educational and institutional spaces' },
+  { to: '/services/hospitality', label: 'Hospitality', note: 'Hotels and guest experiences' },
+  { to: '/services/farm-houses', label: 'Farm houses', note: 'Retreats shaped around nature' },
 ]
 
+function isHomePath(pathname) {
+  return pathname === '/' || pathname === '/features' || pathname === '/vision' || pathname === '/projects'
+}
+
 function isServicesPath(pathname) {
-  return ['/residential', '/housing', '/commercial', '/schools', '/hospitality', '/farm-houses']
-    .some((path) => pathname.startsWith(path))
+  return pathname === '/services' || pathname.startsWith('/services/')
 }
 
 export default function Header({ variant = 'overlay' }) {
@@ -109,7 +112,7 @@ export default function Header({ variant = 'overlay' }) {
             >
               <Link
                 to="/"
-                className={`site-header__navlink ${pathname === '/' ? 'site-header__navlink--active' : ''}`}
+                className={`site-header__navlink ${isHomePath(pathname) ? 'site-header__navlink--active' : ''}`}
                 onClick={() => setMenuOpen(false)}
               >
                 Home
