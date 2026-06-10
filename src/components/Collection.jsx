@@ -109,9 +109,9 @@ export default function Collection() {
       <div className="services-block">
         <span className="services-block__pill">Our Core Architectural Services</span>
 
-        <h2 className="services-block__heading">
+        <h1 className="services-block__heading">
           Crafted by the Best Architects in Chandigarh &amp; Beyond
-        </h2>
+        </h1>
 
         <p className="services-block__body">
           We are Devra Architects, a New Chandigarh-based architecture studio with 475+ completed

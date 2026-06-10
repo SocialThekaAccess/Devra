@@ -3,6 +3,8 @@ import { Link } from '../router'
 import Header from '../components/Header'
 import recognitionImg from '../assets/residential.avif'
 import Footer from '../components/Footer'
+import { useMeta } from '../hooks/useMeta'
+import { seoConfig } from '../seoConfig'
 import './ContactPage.css'
 
 const subjects = [
@@ -17,6 +19,8 @@ const subjects = [
 ]
 
 export default function ContactPage() {
+  useMeta(seoConfig['/contact'])
+
   const [form, setForm] = useState({
     subject: subjects[0],
     fullName: '',

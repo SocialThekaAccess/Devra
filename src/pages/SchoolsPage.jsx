@@ -1,6 +1,7 @@
 import CategoryPage from './CategoryPage'
 import heroImg from '../assets/schools.avif'
 import imgMs1  from '../assets/projects/sch-ms-school.avif'
+import { seoConfig } from '../seoConfig'
 
 const projects = [
   {
@@ -34,11 +35,7 @@ export default function SchoolsPage() {
       title="School Architects in Chandigarh"
       description="Designing future-ready learning environments where architecture inspires curiosity, nurtures growth, and shapes young minds with clarity, comfort, and purpose."
       projects={projects}
-      meta={{
-        title: 'School Architects in Chandigarh | Educational Building Design | Devra',
-        description:
-          'Devra Architects designs schools & educational campuses across Chandigarh, Mohali & Punjab, creating inspiring learning environments with smart planning, functional spaces & modern architecture.',
-      }}
+      seo={seoConfig['/school-architects-chandigarh']}
     />
   )
 }

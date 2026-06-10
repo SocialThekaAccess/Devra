@@ -4,6 +4,8 @@ import residentialImg from '../assets/residential.avif'
 import housingImg from '../assets/housing.avif'
 import Footer from '../components/Footer'
 import { heroSlides } from '../content/heroSlides'
+import { useMeta } from '../hooks/useMeta'
+import { seoConfig } from '../seoConfig'
 import './AboutPage.css'
 
 const values = [
@@ -49,6 +51,8 @@ const team = [
 ]
 
 export default function AboutPage() {
+  useMeta(seoConfig['/about-us'])
+
   return (
     <div className="about-page">
       <HeroSlider hideContent slides={heroSlides} />

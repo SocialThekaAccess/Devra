@@ -4,8 +4,8 @@ import Footer from '../components/Footer'
 import { useMeta } from '../hooks/useMeta'
 import './CategoryPage.css'
 
-export default function CategoryPage({ heroImg, title, description, projects, meta }) {
-  useMeta(meta)
+export default function CategoryPage({ heroImg, title, description, projects, seo }) {
+  useMeta(seo)
 
   return (
     <div className="cat-page">

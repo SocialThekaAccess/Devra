@@ -9,6 +9,7 @@ import imgKangs      from '../assets/projects/res-kangs.avif'
 import imgSupreet    from '../assets/projects/res-supreet.jpg'
 import imgMidhas     from '../assets/projects/res-midhas.avif'
 import imgMinzs      from '../assets/projects/res-minzs.jpg'
+import { seoConfig } from '../seoConfig'
 
 const projects = [
   { id: 1, size: '300 + 300 SQYD', year: '2024', type: 'Home',  name: '121 & 122 PH-1 Omaxe',   location: 'New Chandigarh', img: img121,       to: '/services/residential/121-122' },
@@ -29,11 +30,7 @@ export default function ResidentialPage() {
       title="Residential Architects in Chandigarh"
       description="Luxury residential projects crafted with elegance, blending modern design, comfort, and timeless architectural excellence."
       projects={projects}
-      meta={{
-        title: 'Residential Architects in Chandigarh | Luxury Home & Villa Design | Devra',
-        description:
-          'Devra Architects creates custom residential spaces, luxury homes, and villas in Chandigarh, Mohali, and Punjab, combining practical layouts, timeless design, and lasting value.',
-      }}
+      seo={seoConfig['/residential-architects-chandigarh']}
     />
   )
 }

@@ -3,6 +3,7 @@ import heroImg from '../assets/commercial.jpg'
 import fortofinoImg from '../assets/fortofino.avif'
 import milkPointImg from '../assets/milk-point.avif'
 import imgDevra from '../assets/projects/com-devra.jpg'
+import { seoConfig } from '../seoConfig'
 
 const projects = [
   {
@@ -47,11 +48,7 @@ export default function CommercialPage() {
       title="Commercial Architects in Chandigarh"
       description="Innovative commercial spaces designed for impact, functionality, and brand presence - built with precision and enduring architectural quality."
       projects={projects}
-      meta={{
-        title: 'Commercial Architects in Chandigarh | Office & Retail Design | Devra',
-        description:
-          'Devra Architects designs commercial spaces, offices, retail outlets, and business environments across Chandigarh, Mohali, and Punjab with smart planning, strong brand identity, and functional design.',
-      }}
+      seo={seoConfig['/commercial-architects-chandigarh']}
     />
   )
 }

@@ -109,9 +109,7 @@ export default function HeroSlider({
 
       {!hideContent && (
         <div className="hero__content">
-          <h1 className="hero__heading">
-            Live The Dream
-          </h1>
+          <p className="hero__eyebrow">Live The Dream</p>
           <p className="hero__subheading">
             Luxury Architecture That Defines Modern Living
           </p>

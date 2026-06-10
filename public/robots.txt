@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block build artifacts and internal paths
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /scripts/
+Disallow: /*.mjs$
+Disallow: /*.json$
+
+Sitemap: https://www.devra.in/sitemap.xml

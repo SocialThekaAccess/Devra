@@ -80,7 +80,7 @@
   align-items: center;
 }
 
-.hero__heading {
+.hero__eyebrow {
   font-family: var(--font-serif);
   font-size: var(--fs-h1);
   font-weight: 400;
@@ -216,10 +216,9 @@
     padding-bottom: 112px;
   }
 
-  .hero__heading {
+  .hero__eyebrow {
     max-width: 12ch;
   }
-
   .hero__subheading {
     margin-bottom: 28px;
   }

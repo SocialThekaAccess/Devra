@@ -2,6 +2,7 @@ import CategoryPage from './CategoryPage'
 import heroImg   from '../assets/farmHouse.avif'
 import imgGills  from '../assets/projects/fh-gills.avif'
 import imgNagra  from '../assets/nagra-farmhouse.avif'
+import { seoConfig } from '../seoConfig'
 
 const projects = [
   {
@@ -35,11 +36,7 @@ export default function FarmHousePage() {
       title="Farm House Architects in Chandigarh"
       description="Crafting refined farmhouse environments where architecture dissolves into nature, balancing openness, privacy, and material warmth to create calm, luxurious living experiences rooted in landscape and light."
       projects={projects}
-      meta={{
-        title: 'Farm House Architects in Chandigarh | Luxury Farm House Design | Devra',
-        description:
-          'Devra Architects specializes in luxury farm house design across Chandigarh, Mohali & Punjab, creating spacious, well-planned homes that blend modern architecture, comfort & natural surroundings.',
-      }}
+      seo={seoConfig['/farm-house-architects-chandigarh']}
     />
   )
 }
