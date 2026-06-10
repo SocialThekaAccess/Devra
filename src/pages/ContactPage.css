@@ -174,8 +174,11 @@
   text-align: center;
   padding: 44px 28px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(180deg, rgba(107, 47, 160, 0.18), rgba(30, 10, 46, 0.98)),
+    #1e0a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 64px rgba(9, 3, 16, 0.28);
 }
 
 .contact-success__heading {
@@ -188,9 +191,14 @@
 .contact-success__body {
   font-size: 15px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(255, 255, 255, 0.84);
   line-height: 1.7;
   max-width: 480px;
+}
+
+.contact-success__email {
+  color: #fff;
+  font-weight: 600;
 }
 
 .contact-success__btn {
@@ -200,12 +208,13 @@
   min-height: 48px;
   padding: 13px 32px;
   border-radius: 100px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #1e0a2e;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   font-size: 13px;
   color: #fff;
   font-weight: 600;
   letter-spacing: 0.04em;
+  box-shadow: 0 12px 30px rgba(9, 3, 16, 0.24);
 }
 
 .contact-recognition {

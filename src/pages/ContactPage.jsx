@@ -188,8 +188,8 @@ export default function ContactPage() {
           <div className="contact-success">
             <h2 className="contact-success__heading">Check your email app</h2>
             <p className="contact-success__body">
-              Your message details were prepared for `info@devra.in`. If no email window opened,
-              you can also reach the team directly at +91 9779662286.
+              Your message details were prepared for <span className="contact-success__email">info@devra.in</span>.
+              If no email window opened, you can also reach the team directly at +91 9779662286.
             </p>
             <Link to="/" className="contact-success__btn">Back to Home</Link>
           </div>
