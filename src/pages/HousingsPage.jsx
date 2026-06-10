@@ -33,9 +33,14 @@ export default function HousingsPage() {
   return (
     <CategoryPage
       heroImg={heroImg}
-      title="Housing"
+      title="Housing Architects in Chandigarh"
       description="Luxury housing projects crafted with precision, blending modern architecture, refined comfort, and distinctive spatial experiences."
       projects={projects}
+      meta={{
+        title: 'Housing Architects in Chandigarh | Township & Housing Design | Devra',
+        description:
+          'Devra Architects specializes in housing projects, residential townships, and community developments across Chandigarh, Mohali, and Punjab, creating well-planned spaces that support modern living and long-term value.',
+      }}
     />
   )
 }

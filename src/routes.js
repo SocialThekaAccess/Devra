@@ -33,22 +33,42 @@ const ResMinzsPage = lazy(() => import('./pages/projects/ResMinzsPage'))
 export const routes = {
   '/about-us': AboutPage,
   '/contact': ContactPage,
+
+  // Residential — canonical SEO slug + legacy alias
+  '/residential-architects-chandigarh': ResidentialPage,
   '/services/residential': ResidentialPage,
+
+  // Housing — canonical SEO slug + legacy alias
+  '/housing-architects-chandigarh': HousingsPage,
   '/services/housing': HousingsPage,
   '/services/housing/sansarg': HouSansargPage,
   '/services/housing/panchkula-housing': HouPanchkulaPage,
+
+  // Commercial — canonical SEO slug + legacy alias
+  '/commercial-architects-chandigarh': CommercialPage,
   '/services/commercial': CommercialPage,
   '/services/commercial/devra-architects': ComDevraArchPage,
   '/services/commercial/fortofino': ComFortofinoPage,
   '/services/commercial/milk-point': ComMilkPointPage,
+
+  // Schools — canonical SEO slug + legacy alias
+  '/school-architects-chandigarh': SchoolsPage,
   '/services/schools': SchoolsPage,
   '/services/schools/m-s-school': SchMsSchoolPage,
   '/services/schools/j-p-international': SchJpInternationalPage,
+
+  // Hospitality — canonical SEO slug + legacy alias
+  '/hospitality-architects-chandigarh': HospitalityPage,
   '/services/hospitality': HospitalityPage,
   '/services/hospitality/castle-grey': HosCastleGreyPage,
+
+  // Farm Houses — canonical SEO slug + legacy alias
+  '/farm-house-architects-chandigarh': FarmHousePage,
   '/services/farm-houses': FarmHousePage,
   '/services/farm-houses/gill-s-farmhouse': FhGillsFarmhousePage,
   '/services/farm-houses/nagra-farmhouse': FhNagraFarmhousePage,
+
+  // Residential projects
   '/services/residential/121-122': Res121122Page,
   '/services/residential/villa-361': ResVilla361Page,
   '/services/residential/villa-58': ResVilla58Page,

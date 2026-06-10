@@ -26,9 +26,14 @@ export default function ResidentialPage() {
   return (
     <CategoryPage
       heroImg={heroImg}
-      title="Residential"
+      title="Residential Architects in Chandigarh"
       description="Luxury residential projects crafted with elegance, blending modern design, comfort, and timeless architectural excellence."
       projects={projects}
+      meta={{
+        title: 'Residential Architects in Chandigarh | Luxury Home & Villa Design | Devra',
+        description:
+          'Devra Architects creates custom residential spaces, luxury homes, and villas in Chandigarh, Mohali, and Punjab, combining practical layouts, timeless design, and lasting value.',
+      }}
     />
   )
 }

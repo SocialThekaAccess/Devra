@@ -20,9 +20,14 @@ export default function HospitalityPage() {
   return (
     <CategoryPage
       heroImg={heroImg}
-      title="Hospitality"
+      title="Hospitality Architects in Chandigarh"
       description="Hospitality spaces focused on comfort, flow, and atmosphere - blending warm materials, lighting, and clear planning to create memorable dining and social experiences."
       projects={projects}
+      meta={{
+        title: 'Hospitality Architects in Chandigarh | Hotel & Resort Design | Devra',
+        description:
+          'Devra Architects specializes in hospitality architecture, designing hotels, resorts, restaurants, and guest-focused spaces across Chandigarh, Mohali, and Punjab with thoughtful planning and modern design.',
+      }}
     />
   )
 }

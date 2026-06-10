@@ -31,9 +31,14 @@ export default function SchoolsPage() {
   return (
     <CategoryPage
       heroImg={heroImg}
-      title="Schools"
+      title="School Architects in Chandigarh"
       description="Designing future-ready learning environments where architecture inspires curiosity, nurtures growth, and shapes young minds with clarity, comfort, and purpose."
       projects={projects}
+      meta={{
+        title: 'School Architects in Chandigarh | Educational Building Design | Devra',
+        description:
+          'Devra Architects designs schools & educational campuses across Chandigarh, Mohali & Punjab, creating inspiring learning environments with smart planning, functional spaces & modern architecture.',
+      }}
     />
   )
 }

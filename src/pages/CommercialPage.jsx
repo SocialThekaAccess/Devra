@@ -44,9 +44,14 @@ export default function CommercialPage() {
   return (
     <CategoryPage
       heroImg={heroImg}
-      title="Commercial"
+      title="Commercial Architects in Chandigarh"
       description="Innovative commercial spaces designed for impact, functionality, and brand presence - built with precision and enduring architectural quality."
       projects={projects}
+      meta={{
+        title: 'Commercial Architects in Chandigarh | Office & Retail Design | Devra',
+        description:
+          'Devra Architects designs commercial spaces, offices, retail outlets, and business environments across Chandigarh, Mohali, and Punjab with smart planning, strong brand identity, and functional design.',
+      }}
     />
   )
 }

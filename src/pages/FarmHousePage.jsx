@@ -32,9 +32,14 @@ export default function FarmHousePage() {
   return (
     <CategoryPage
       heroImg={heroImg}
-      title="Farm House"
+      title="Farm House Architects in Chandigarh"
       description="Crafting refined farmhouse environments where architecture dissolves into nature, balancing openness, privacy, and material warmth to create calm, luxurious living experiences rooted in landscape and light."
       projects={projects}
+      meta={{
+        title: 'Farm House Architects in Chandigarh | Luxury Farm House Design | Devra',
+        description:
+          'Devra Architects specializes in luxury farm house design across Chandigarh, Mohali & Punjab, creating spacious, well-planned homes that blend modern architecture, comfort & natural surroundings.',
+      }}
     />
   )
 }

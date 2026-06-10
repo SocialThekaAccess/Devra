@@ -1,9 +1,12 @@
 import { Link } from '../router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { useMeta } from '../hooks/useMeta'
 import './CategoryPage.css'
 
-export default function CategoryPage({ heroImg, title, description, projects }) {
+export default function CategoryPage({ heroImg, title, description, projects, meta }) {
+  useMeta(meta)
+
   return (
     <div className="cat-page">
       <section className="cat-hero">

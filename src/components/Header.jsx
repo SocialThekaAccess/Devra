@@ -4,12 +4,12 @@ import devraLogo from '../assets/devraLogo.png'
 import './Header.css'
 
 const serviceLinks = [
-  { to: '/services/residential', label: 'Residential', note: 'Private homes and villas' },
-  { to: '/services/housing', label: 'Housing', note: 'Community and multi-unit living' },
-  { to: '/services/commercial', label: 'Commercial', note: 'Retail, office and mixed-use' },
-  { to: '/services/schools', label: 'Schools', note: 'Educational and institutional spaces' },
-  { to: '/services/hospitality', label: 'Hospitality', note: 'Hotels and guest experiences' },
-  { to: '/services/farm-houses', label: 'Farm houses', note: 'Retreats shaped around nature' },
+  { to: '/residential-architects-chandigarh', label: 'Residential', note: 'Private homes and villas' },
+  { to: '/housing-architects-chandigarh', label: 'Housing', note: 'Community and multi-unit living' },
+  { to: '/commercial-architects-chandigarh', label: 'Commercial', note: 'Retail, office and mixed-use' },
+  { to: '/school-architects-chandigarh', label: 'Schools', note: 'Educational and institutional spaces' },
+  { to: '/hospitality-architects-chandigarh', label: 'Hospitality', note: 'Hotels and guest experiences' },
+  { to: '/farm-house-architects-chandigarh', label: 'Farm houses', note: 'Retreats shaped around nature' },
 ]
 
 function isHomePath(pathname) {
@@ -17,7 +17,16 @@ function isHomePath(pathname) {
 }
 
 function isServicesPath(pathname) {
-  return pathname === '/services' || pathname.startsWith('/services/')
+  return (
+    pathname === '/services' ||
+    pathname.startsWith('/services/') ||
+    pathname === '/residential-architects-chandigarh' ||
+    pathname === '/housing-architects-chandigarh' ||
+    pathname === '/commercial-architects-chandigarh' ||
+    pathname === '/school-architects-chandigarh' ||
+    pathname === '/hospitality-architects-chandigarh' ||
+    pathname === '/farm-house-architects-chandigarh'
+  )
 }
 
 export default function Header({ variant = 'overlay' }) {
