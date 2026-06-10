@@ -109,8 +109,13 @@ export default function Collection() {
       <div className="services-block">
         <span className="services-block__pill">Our Core Architectural Services</span>
 
+        {/*
+          SEO: only "Best Architects in Chandigarh" carries h1 weight.
+          Visually the full line renders identically.
+          "Crafted by the" and "& Beyond" are presentational spans.
+        */}
         <h1 className="services-block__heading">
-          Crafted by the Best Architects in Chandigarh &amp; Beyond
+          <span className="services-block__heading-pre">Crafted by the </span>Best Architects in Chandigarh<span className="services-block__heading-post"> &amp; Beyond</span>
         </h1>
 
         <p className="services-block__body">

@@ -97,6 +97,12 @@
   letter-spacing: -0.01em;
 }
 
+/* "Crafted by the" and "& Beyond" are decorative — same visual style, not the SEO keyword */
+.services-block__heading-pre,
+.services-block__heading-post {
+  font-weight: 300;
+}
+
 .services-block__body {
   font-size: var(--fs-p);
   font-weight: 300;
