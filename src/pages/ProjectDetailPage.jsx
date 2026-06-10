@@ -51,10 +51,6 @@ export default function ProjectDetailPage({
 
   return (
     <div className="proj-page">
-      <Link to={backTo} className="proj-back">
-        &lt;- {backLabel}
-      </Link>
-
       <section className="proj-hero">
         <img
           src={heroImg}

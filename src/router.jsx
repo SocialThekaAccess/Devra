@@ -48,19 +48,36 @@ export function navigate(to) {
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
 
-export function Link({ to, children, className, style, onClick, ...rest }) {
+function shouldHandleClientNavigation(event, target, download) {
+  if (event.button !== 0) return false
+  if (event.metaKey || event.altKey || event.ctrlKey || event.shiftKey) return false
+  if (target && target !== '_self') return false
+  if (download != null) return false
+  return true
+}
+
+export function Link({ to, children, className, style, onClick, target, download, ...rest }) {
   const handleClick = (event) => {
     onClick?.(event)
     if (event.defaultPrevented) return
 
     if (to.startsWith('http') || to.startsWith('mailto:') || to.startsWith('tel:')) return
+    if (!shouldHandleClientNavigation(event, target, download)) return
 
     event.preventDefault()
     navigate(to)
   }
 
   return (
-    <a href={to} className={className} style={style} onClick={handleClick} {...rest}>
+    <a
+      href={to}
+      className={className}
+      style={style}
+      onClick={handleClick}
+      target={target}
+      download={download}
+      {...rest}
+    >
       {children}
     </a>
   )
