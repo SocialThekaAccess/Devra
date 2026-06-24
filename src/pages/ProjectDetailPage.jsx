@@ -1,6 +1,8 @@
 import { Link } from '../router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { useMeta } from '../hooks/useMeta'
+import { SITE } from '../seoConfig'
 import './ProjectDetailPage.css'
 
 function buildRows(images) {
@@ -35,8 +37,6 @@ function buildRows(images) {
 }
 
 export default function ProjectDetailPage({
-  backTo,
-  backLabel,
   title,
   location,
   category,
@@ -48,6 +48,16 @@ export default function ProjectDetailPage({
 }) {
   const heroImg = images[0]
   const rows = buildRows(images.slice(1))
+  const path = decodeURIComponent(window.location.pathname)
+  const pageTitle = `${title} | ${category || 'Project'} Project | Devra Architects`
+  const ogImage = heroImg?.startsWith('/') ? `${SITE}${heroImg}` : heroImg
+
+  useMeta({
+    title: pageTitle,
+    description: overview,
+    canonical: `${SITE}${path}`,
+    ogImage,
+  })
 
   return (
     <div className="proj-page">

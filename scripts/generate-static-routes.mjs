@@ -14,7 +14,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { routePaths } from '../src/routes.js'
-import { seoConfig, defaultSeo } from '../src/seoConfig.js'
+import { seoConfig, defaultSeo, SITE } from '../src/seoConfig.js'
 
 const __dirname  = path.dirname(fileURLToPath(import.meta.url))
 const projectRoot = path.resolve(__dirname, '..')
@@ -31,21 +31,36 @@ function esc(str) {
     .replace(/>/g, '&gt;')
 }
 
+const canonicalAliases = {
+  '/services/residential': '/residential-architects-chandigarh',
+  '/services/housing': '/housing-architects-chandigarh',
+  '/services/commercial': '/commercial-architects-chandigarh',
+  '/services/schools': '/school-architects-chandigarh',
+  '/services/hospitality': '/hospitality-architects-chandigarh',
+  '/services/farm-houses': '/farm-house-architects-chandigarh',
+}
+
+const homeSectionPaths = new Set(['/services', '/features', '/vision', '/projects'])
+
 /**
  * Build the full <head> meta block for a given route path.
  * Falls back to defaultSeo for any field not present.
  */
 function buildHeadMeta(routePath) {
-  // Canonical paths: legacy /services/* aliases resolve to the SEO slug
-  const seoKey =
-    seoConfig[routePath]
-      ? routePath
-      : Object.keys(seoConfig).find((k) => seoConfig[k] && routePath.startsWith(k)) ?? '/'
+  // Canonical paths: legacy service aliases resolve to the SEO slug, while
+  // project detail pages keep their own URL.
+  const canonicalPath = canonicalAliases[routePath] ?? routePath
+  const hasOwnSeo = Boolean(seoConfig[canonicalPath])
+  const seoKey = hasOwnSeo ? canonicalPath : '/'
 
   const seo   = { ...defaultSeo, ...(seoConfig[seoKey] ?? {}) }
   const title = esc(seo.title)
   const desc  = esc(seo.description)
-  const canon = esc(seo.canonical ?? `https://www.devra.in${routePath}`)
+  const canonical =
+    hasOwnSeo || homeSectionPaths.has(routePath)
+      ? seo.canonical
+      : `${SITE}${canonicalPath}`
+  const canon = esc(canonical)
   const image = esc(seo.ogImage ?? defaultSeo.ogImage)
   const jsonld = JSON.stringify(seo.schema ?? defaultSeo.schema)
 

@@ -8,4 +8,4 @@ Disallow: /scripts/
 Disallow: /*.mjs$
 Disallow: /*.json$
 
-Sitemap: https://www.devra.in/sitemap.xml
+Sitemap: https://devra.in/sitemap.xml

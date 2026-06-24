@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const distDir = path.resolve(__dirname, '..', 'dist')
 
-const SITE = 'https://www.devra.in'
+const SITE = 'https://devra.in'
 const TODAY = new Date().toISOString().split('T')[0] // YYYY-MM-DD
 
 /**

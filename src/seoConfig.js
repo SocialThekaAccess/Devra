@@ -9,7 +9,7 @@
  *  schema       — JSON-LD object serialised into <script type="application/ld+json">
  */
 
-const SITE = 'https://www.devra.in'
+export const SITE = 'https://devra.in'
 
 // ── OG image map ─────────────────────────────────────────────────────────────
 // All files live in /public/og/ and are served at /og/<file> on the domain.
