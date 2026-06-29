@@ -2,6 +2,8 @@ import { lazy } from 'react'
 import { homeSectionPaths } from './routeConfig.js'
 
 const AboutPage = lazy(() => import('./pages/AboutPage'))
+const BlogPage = lazy(() => import('./pages/BlogPage'))
+const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const ResidentialPage = lazy(() => import('./pages/ResidentialPage'))
 const HousingsPage = lazy(() => import('./pages/HousingsPage'))
@@ -32,6 +34,9 @@ const ResMinzsPage = lazy(() => import('./pages/projects/ResMinzsPage'))
 
 export const routes = {
   '/about-us': AboutPage,
+  '/blog': BlogPage,
+  '/blog/residential-architects-chandigarh-dream-home-guide': BlogArticlePage,
+  '/blog/premium-bungalow-architects-chandigarh-planning-guide': BlogArticlePage,
   '/contact': ContactPage,
 
   // Residential — canonical SEO slug + legacy alias

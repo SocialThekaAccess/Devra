@@ -116,7 +116,58 @@ export const seoConfig = {
     },
   },
 
+  '/blog': {
+    title: 'Architecture & Design Blog | Devra Architects',
+    description:
+      'Read architecture, design, and project insights from Devra Architects for homes, interiors, approvals, budgets, and construction planning.',
+    canonical: `${SITE}/blog`,
+    ogImage: OG.brand,
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: 'Devra Architects Blog',
+      url: `${SITE}/blog`,
+      publisher: FIRM,
+    },
+  },
+
+  '/blog/residential-architects-chandigarh-dream-home-guide': {
+    title: 'Residential Architects in Chandigarh | Dream Home Planning Guide',
+    description:
+      'Build your dream home with confidence. Learn how residential architects in Chandigarh help homeowners navigate design, approvals, budgets, and construction.',
+    canonical: `${SITE}/blog/residential-architects-chandigarh-dream-home-guide`,
+    ogImage: OG.brand,
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: 'What Homeowners Wish They Knew Before Starting Their Dream Home Project',
+      description:
+        'Build your dream home with confidence. Learn how residential architects in Chandigarh help homeowners navigate design, approvals, budgets, and construction.',
+      image: OG.brand,
+      url: `${SITE}/blog/residential-architects-chandigarh-dream-home-guide`,
+      publisher: FIRM,
+    },
+  },
+
   // ─── Contact ────────────────────────────────────────────────────────────────
+  '/blog/premium-bungalow-architects-chandigarh-planning-guide': {
+    title: 'Premium Bungalow Architects in Chandigarh | Planning Guide',
+    description:
+      'Planning a premium bungalow in Chandigarh? Discover what experienced architects recommend for smoother approvals, better design, and successful construction.',
+    canonical: `${SITE}/blog/premium-bungalow-architects-chandigarh-planning-guide`,
+    ogImage: OG.brand,
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: "Planning a Premium Bungalow? Here's What Architects Want You to Know First",
+      description:
+        'Planning a premium bungalow in Chandigarh? Discover what experienced architects recommend for smoother approvals, better design, and successful construction.',
+      image: OG.brand,
+      url: `${SITE}/blog/premium-bungalow-architects-chandigarh-planning-guide`,
+      publisher: FIRM,
+    },
+  },
+
   '/contact': {
     title: 'Contact Devra Architects | Get in Touch for Your Project',
     description:

@@ -133,6 +133,13 @@ export default function Header({ variant = 'overlay' }) {
               >
                 About us
               </Link>
+              <Link
+                to="/blog"
+                className={`site-header__navlink ${pathname === '/blog' ? 'site-header__navlink--active' : ''}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                Blog
+              </Link>
 
               <div
                 ref={dropdownRef}

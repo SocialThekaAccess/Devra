@@ -26,6 +26,9 @@ const urls = [
   // ── Core pages ───────────────────────────────────────────────────────────────
   { loc: '/',          changefreq: 'weekly',  priority: '1.0' },
   { loc: '/about-us',  changefreq: 'monthly', priority: '0.6' },
+  { loc: '/blog',      changefreq: 'weekly',  priority: '0.6' },
+  { loc: '/blog/residential-architects-chandigarh-dream-home-guide', changefreq: 'monthly', priority: '0.6' },
+  { loc: '/blog/premium-bungalow-architects-chandigarh-planning-guide', changefreq: 'monthly', priority: '0.6' },
   { loc: '/contact',   changefreq: 'monthly', priority: '0.6' },
 
   // ── Service categories (canonical SEO slugs) ─────────────────────────────────
