@@ -1,12 +1,17 @@
 import { Link } from '../router'
 import HeroSlider from '../components/HeroSlider'
 import residentialImg from '../assets/residential.avif'
-import housingImg from '../assets/housing.avif'
 import Footer from '../components/Footer'
 import { heroSlides } from '../content/heroSlides'
 import { useMeta } from '../hooks/useMeta'
 import { seoConfig } from '../seoConfig'
 import './AboutPage.css'
+
+const studioNotes = [
+  'Luxury residences, hospitality spaces, schools, housing and commercial projects across Chandigarh, Mohali and Punjab.',
+  'A process built around research, client clarity, technical coordination and long-term material value.',
+  'Design language that moves between modern, classical, neo and parametric architecture with disciplined detailing.',
+]
 
 const values = [
   {
@@ -29,33 +34,28 @@ const values = [
   },
 ]
 
-const team = [
-  {
-    id: 1,
-    name: 'Ar. Varun Kumar Devra',
-    role: 'Director & Principal Architect',
-    img: residentialImg,
-  },
-  {
-    id: 2,
-    name: 'Pooja Devra',
-    role: 'Director',
-    img: housingImg,
-  },
-  {
-    id: 3,
-    name: 'Lakshay Devra',
-    role: 'Director',
-    img: housingImg,
-  },
-]
-
 export default function AboutPage() {
   useMeta(seoConfig['/about-us'])
 
   return (
     <div className="about-page">
       <HeroSlider hideContent slides={heroSlides} />
+
+      <section className="about-intro">
+        <div className="about-intro__copy">
+          <span className="about-intro__pill">About Devra Architects</span>
+          <h1 className="about-intro__heading">
+            Architecture shaped by clarity, craft and trust.
+          </h1>
+        </div>
+        <p className="about-intro__body">
+          Devra Architects is a New Chandigarh based architecture and interior
+          design studio creating spaces that balance expressive design with
+          practical execution. Each project is approached with careful planning,
+          technical discipline and a deep respect for how people live, work and
+          gather.
+        </p>
+      </section>
 
       <section className="about-values">
         {values.map((value, index) => (
@@ -83,28 +83,33 @@ export default function AboutPage() {
       </section>
 
       <section className="about-team">
-        <div className="about-team__header">
-          <span className="about-team__pill">The People</span>
-          <h2 className="about-team__heading">Meet the team</h2>
-        </div>
-        <div className="about-team__grid">
-          {team.map((member) => (
-            <div key={member.id} className="about-team__card">
-              <div className="about-team__card-img-wrap">
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className="about-team__card-img"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div className="about-team__card-body">
-                <h3 className="about-team__card-name">{member.name}</h3>
-                <p className="about-team__card-role">{member.role}</p>
-              </div>
+        <div className="about-team__profile">
+          <div className="about-team__image-wrap">
+            <img
+              src={residentialImg}
+              alt="Ar. Varun Devra"
+              className="about-team__image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div className="about-team__content">
+            <span className="about-team__pill">Studio Lead</span>
+            <h2 className="about-team__heading">Ar. Varun Devra</h2>
+            <p className="about-team__body">
+              The studio is led with a focus on well-resolved planning,
+              proportion, detailing and site coordination. The result is
+              architecture that feels considered from first sketch to final
+              handover.
+            </p>
+            <div className="about-team__notes">
+              {studioNotes.map((note) => (
+                <p key={note} className="about-team__note">
+                  {note}
+                </p>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
