@@ -34,7 +34,14 @@ export const blogPosts = [
         paragraphs: [
           'This is the misunderstanding that causes more problems than almost anything else.',
           'A lot of people think of the architect as someone who produces the drawings, hands them to a contractor, and then largely disappears. In reality - especially on a luxury home - your architect is the person who holds the entire vision together from start to finish.',
-          "In Chandigarh specifically, there is another layer to this. The city has its own architectural language - shaped by Le Corbusier's original vision and refined over decades of thoughtful residential development. Good residential architects in Chandigarh understand this instinctively - the UT's regulations, the sector character, the relationship between built space and green buffer that makes this city feel the way it does.",
+          [
+            "In Chandigarh specifically, there is another layer to this. The city has its own architectural language - shaped by Le Corbusier's original vision and refined over decades of thoughtful residential development. Good ",
+            {
+              text: 'residential architects in Chandigarh',
+              href: 'https://devra.in/residential-architects-chandigarh',
+            },
+            " understand this instinctively - the UT's regulations, the sector character, the relationship between built space and green buffer that makes this city feel the way it does.",
+          ],
           'Devra Architects has spent years building that kind of local fluency - across 475+ projects in Chandigarh, Mohali, and Punjab. It is the difference between a home that could be anywhere and one that could only be here.',
         ],
       },
@@ -160,7 +167,14 @@ export const blogPosts = [
           "This is something that catches a lot of people off guard, especially those who've built or bought property in other cities.",
           "Chandigarh is a Union Territory with its own planning authority, its own building rules, and a level of regulatory discipline that most Indian cities simply don't have. Setback requirements, coverage limits, height restrictions, FAR calculations - all of it applies, all of it is enforced, and none of it is negotiable after the fact.",
           "For a premium bungalow, this matters enormously. The plot you've purchased has a specific set of permissions attached to it. What you can build, how large it can be, how close it can sit to the boundary - these things are determined before you even meet an architect.",
-          "The premium bungalow architects in Chandigarh who've been working here long enough know all of this before the first sketch. They design within these parameters from the very beginning, which means their plans sail through approvals rather than coming back for revision after revision.",
+          [
+            'The ',
+            {
+              text: 'premium bungalow architects in Chandigarh',
+              href: 'https://devra.in/residential-architects-chandigarh',
+            },
+            " who've been working here long enough know all of this before the first sketch. They design within these parameters from the very beginning, which means their plans sail through approvals rather than coming back for revision after revision.",
+          ],
           "Devra Architects has navigated the UT's regulatory framework across hundreds of residential projects. We know what works, what doesn't, and more importantly how to get the most out of what's permissible. That knowledge is genuinely valuable. It saves time, saves money, and spares you the frustration of falling in love with a design that can't actually be built.",
         ],
       },
