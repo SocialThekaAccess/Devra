@@ -94,7 +94,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="about-team__content">
-            <span className="about-team__pill">Studio Lead</span>
+            <span className="about-team__pill">Meet the Architect </span>
             <h2 className="about-team__heading">Ar. Varun Devra</h2>
             <p className="about-team__body">
               The studio is led with a focus on well-resolved planning,
